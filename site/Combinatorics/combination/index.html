@@ -1,0 +1,1444 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://feishili.netlify.app/Combinatorics/combination/">
+      
+      
+        <link rel="prev" href="../../math/GCD_Convolution/">
+      
+      
+        <link rel="next" href="../../dp/bit_dp/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.25">
+    
+    
+      
+        <title>combination - feishi-wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6543a935.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#nx" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="feishi-wiki" class="md-header__button md-logo" aria-label="feishi-wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            feishi-wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              combination
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  关于
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../math/GCD_Convolution/" class="md-tabs__link">
+          
+  
+  Math
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  Combinatorics
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../dp/bit_dp/" class="md-tabs__link">
+          
+  
+  dp
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../miscellaneous/two_pointer/" class="md-tabs__link">
+          
+  
+  miscellaneous
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../atc/ABC015/" class="md-tabs__link">
+          
+  
+  Atcoder
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="feishi-wiki" class="md-nav__button md-logo" aria-label="feishi-wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    feishi-wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    关于
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Math
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Math
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../math/GCD_Convolution/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GCD Convolution
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Combinatorics
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Combinatorics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    combination
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    combination
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#nx" class="md-nav__link">
+    <span class="md-ellipsis">
+      将N球放入X盒子
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="将N球放入X盒子">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      区分球，区分盒子
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      不区分球，区分盒子
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      区分球，不区分盒子
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      不区分球，不区分盒子
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      模板仅供参考
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    dp
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            dp
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dp/bit_dp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    bit dp
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dp/dp_on_tree/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    dp on  tree
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dp/dp_on_digits/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    dp on digits
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dp/range_dp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Range dp
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    miscellaneous
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            miscellaneous
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../miscellaneous/two_pointer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Two pointer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Atcoder
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Atcoder
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../atc/ABC015/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ABC015
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../atc/ABC016/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ABC016
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../atc/ABC036/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ABC036
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../atc/ABC110/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ABC110
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../atc/ABC127/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ABC127
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../atc/ABC128/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ABC128
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../atc/ABC133/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ABC133
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../atc/ABC160/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ABC160
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../atc/ABC170/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ABC170
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../atc/ABC284/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ABC284
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../atc/ABC325/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ABC325
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../atc/ABC349/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ABC349
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../atc/ABC127/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ABC127
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#nx" class="md-nav__link">
+    <span class="md-ellipsis">
+      将N球放入X盒子
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="将N球放入X盒子">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      区分球，区分盒子
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      不区分球，区分盒子
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      区分球，不区分盒子
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      不区分球，不区分盒子
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      模板仅供参考
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>combination</h1>
+
+<h3 id="nx">将N球放入X盒子</h3>
+<table>
+<thead>
+<tr>
+<th>区分球</th>
+<th>区分盒子</th>
+<th>没有限制</th>
+<th>至多1个</th>
+<th>至少1个</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>1</td>
+<td><span class="arithmatex"><span class="MathJax_Preview">x^{N}</span><script type="math/tex">x^{N}</script></span></td>
+<td><span class="arithmatex"><span class="MathJax_Preview">P(N,X)</span><script type="math/tex">P(N,X)</script></span></td>
+<td><span class="arithmatex"><span class="MathJax_Preview">X!S(N,X)=\sum_{i=0}^{X}(-1)^{X-i}C(X,i)i^{N}</span><script type="math/tex">X!S(N,X)=\sum_{i=0}^{X}(-1)^{X-i}C(X,i)i^{N}</script></span></td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td><span class="arithmatex"><span class="MathJax_Preview">H(N,X)=C(N+X-1,N)</span><script type="math/tex">H(N,X)=C(N+X-1,N)</script></span></td>
+<td><span class="arithmatex"><span class="MathJax_Preview">C(N,X)</span><script type="math/tex">C(N,X)</script></span></td>
+<td><span class="arithmatex"><span class="MathJax_Preview">H(N-X,X)=C(N-1,N-X)=C(N-1,X-1)</span><script type="math/tex">H(N-X,X)=C(N-1,N-X)=C(N-1,X-1)</script></span></td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td><span class="arithmatex"><span class="MathJax_Preview">B(N,X)=\sum_{i=0}^{X}S(N,i)</span><script type="math/tex">B(N,X)=\sum_{i=0}^{X}S(N,i)</script></span></td>
+<td><span class="arithmatex"><span class="MathJax_Preview">[N\le X]</span><script type="math/tex">[N\le X]</script></span></td>
+<td><span class="arithmatex"><span class="MathJax_Preview">S(N,X)</span><script type="math/tex">S(N,X)</script></span></td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td><span class="arithmatex"><span class="MathJax_Preview">p_{\le X}(N)=\sum_{i=0}^{X}p_i(N)</span><script type="math/tex">p_{\le X}(N)=\sum_{i=0}^{X}p_i(N)</script></span></td>
+<td>[<span class="arithmatex"><span class="MathJax_Preview">N\le X</span><script type="math/tex">N\le X</script></span>]</td>
+<td><span class="arithmatex"><span class="MathJax_Preview">p_{X}(N)\ or\  p_{\le X}(N-X)</span><script type="math/tex">p_{X}(N)\ or\  p_{\le X}(N-X)</script></span></td>
+</tr>
+</tbody>
+</table>
+<h4 id="_1">区分球，区分盒子</h4>
+<p><strong>没有限制:</strong></p>
+<p><a href="https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_A">例题</a></p>
+<p>那么每个球有 <span class="arithmatex"><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span> 个选择，选择 <span class="arithmatex"><span class="MathJax_Preview">N</span><script type="math/tex">N</script></span> 次</p>
+<p>由乘法原理，答案为： <span class="arithmatex"><span class="MathJax_Preview">X^{N}</span><script type="math/tex">X^{N}</script></span></p>
+<p><strong>每个盒子至多容纳1个球:</strong></p>
+<p><a href="https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_B">例题</a></p>
+<p>第一个球有 <span class="arithmatex"><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span> 选择，第二个球有 <span class="arithmatex"><span class="MathJax_Preview">X-1</span><script type="math/tex">X-1</script></span> 选择， <span class="arithmatex"><span class="MathJax_Preview">\dots</span><script type="math/tex">\dots</script></span> , 第 <span class="arithmatex"><span class="MathJax_Preview">N</span><script type="math/tex">N</script></span> 个球有 <span class="arithmatex"><span class="MathJax_Preview">X-N+1</span><script type="math/tex">X-N+1</script></span> 个选择</p>
+<p>由乘法原理，答案为: <span class="arithmatex"><span class="MathJax_Preview">X(X-1)(X-2)\dots(X-N+1)=P(N,X)</span><script type="math/tex">X(X-1)(X-2)\dots(X-N+1)=P(N,X)</script></span> , 计算排列 <span class="arithmatex"><span class="MathJax_Preview">P(N,X)即可</span><script type="math/tex">P(N,X)即可</script></span></p>
+<p><strong>每个盒子至少容纳1个球</strong></p>
+<p><a href="https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_C">例题</a></p>
+<p>将一个有 <span class="arithmatex"><span class="MathJax_Preview">N</span><script type="math/tex">N</script></span> 物品的集合分为 <span class="arithmatex"><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span> 个非空子集 的方法数 称之为第二类斯特林数 <span class="arithmatex"><span class="MathJax_Preview">S(N,X)</span><script type="math/tex">S(N,X)</script></span> </p>
+<p>由于 <span class="arithmatex"><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span> 盒子相互区分，所以答案为： <span class="arithmatex"><span class="MathJax_Preview">X!S(N,X)</span><script type="math/tex">X!S(N,X)</script></span></p>
+<p><span class="arithmatex"><span class="MathJax_Preview">S(N,X)=\frac{1}{X!}\sum_{i=0}^{X}(-1)^{X-i}C(X,i)i^{N}</span><script type="math/tex">S(N,X)=\frac{1}{X!}\sum_{i=0}^{X}(-1)^{X-i}C(X,i)i^{N}</script></span></p>
+<p><span class="arithmatex"><span class="MathJax_Preview">X!S(N,X)=\sum_{i=0}^{X}(-1)^{X-i}C(X,i)i^{N}</span><script type="math/tex">X!S(N,X)=\sum_{i=0}^{X}(-1)^{X-i}C(X,i)i^{N}</script></span></p>
+<p>还可以通过动态规划计算:</p>
+<p><span class="arithmatex"><span class="MathJax_Preview">S(N,X)=XS(N-1,X)+S(N-1,X-1)</span><script type="math/tex">S(N,X)=XS(N-1,X)+S(N-1,X-1)</script></span></p>
+<h4 id="_2">不区分球，区分盒子</h4>
+<p><a href="https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_D">例题</a></p>
+<p><strong>没有限制</strong></p>
+<p><span class="arithmatex"><span class="MathJax_Preview">N</span><script type="math/tex">N</script></span> 球选出 <span class="arithmatex"><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span> 个盒子放进去，允许盒子重复选择的方法数称之为 重叠组合 <span class="arithmatex"><span class="MathJax_Preview">H(N,X)=C(N+X-1,N)=C(N+X-1,X-1)</span><script type="math/tex">H(N,X)=C(N+X-1,N)=C(N+X-1,X-1)</script></span></p>
+<p><strong>至多一个</strong></p>
+<p><a href="https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_E">例题</a></p>
+<p><span class="arithmatex"><span class="MathJax_Preview">N</span><script type="math/tex">N</script></span> 球选出 <span class="arithmatex"><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span> 个盒子放进去，不允许盒子重复选择，即为组合数，<span class="arithmatex"><span class="MathJax_Preview">C(N,X)</span><script type="math/tex">C(N,X)</script></span></p>
+<p><strong>至少一个</strong></p>
+<p><a href="https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_F">例题</a></p>
+<p>由于存在每个盒子至少需要一个球的限制，那么可以每个盒子先放进去1个球  </p>
+<p>那么问题就转为 <strong>没有限制</strong> 的情况，也就是重叠组合的情况  </p>
+<p>答案为: <span class="arithmatex"><span class="MathJax_Preview">H(N-X,X)</span><script type="math/tex">H(N-X,X)</script></span></p>
+<h4 id="_3">区分球，不区分盒子</h4>
+<p><strong>没有限制</strong></p>
+<p><a href="https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_G">例题</a></p>
+<p>将 <span class="arithmatex"><span class="MathJax_Preview">N</span><script type="math/tex">N</script></span> 个球分为至多 <span class="arithmatex"><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span> 个非空集合的方法数 称为 贝尔数  </p>
+<p><span class="arithmatex"><span class="MathJax_Preview">B(N,X)=\sum_{i=0}^{X}S(N,i)</span><script type="math/tex">B(N,X)=\sum_{i=0}^{X}S(N,i)</script></span>  </p>
+<p><strong>至多一个</strong></p>
+<p>当 <span class="arithmatex"><span class="MathJax_Preview">N\le X</span><script type="math/tex">N\le X</script></span> 时，所有球都放入盒子，方法数为1  </p>
+<p><span class="arithmatex"><span class="MathJax_Preview">N&gt;X</span><script type="math/tex">N>X</script></span> 时，不能将所有球放入盒子，方法数为0</p>
+<p>简记为: <span class="arithmatex"><span class="MathJax_Preview">[N\le X]</span><script type="math/tex">[N\le X]</script></span></p>
+<p>这个符号为 "Iverson bracket",艾弗森括号</p>
+<p><strong>至少一个</strong></p>
+<p><a href="https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_I">例题</a></p>
+<p>将一个有 <span class="arithmatex"><span class="MathJax_Preview">N</span><script type="math/tex">N</script></span> 物品的集合分为 <span class="arithmatex"><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span> 个非空子集 的方法数 称之为第二类斯特林数 <span class="arithmatex"><span class="MathJax_Preview">S(N,X)</span><script type="math/tex">S(N,X)</script></span></p>
+<h4 id="_4">不区分球，不区分盒子</h4>
+<p><strong>没有限制</strong></p>
+<p><a href="https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_J">例题</a></p>
+<p>将 <span class="arithmatex"><span class="MathJax_Preview">N</span><script type="math/tex">N</script></span> 球 划分到至多 <span class="arithmatex"><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span> 个盒子 的方法数称之为 划分数</p>
+<p>根据公式: <span class="arithmatex"><span class="MathJax_Preview">p(n,k)=p(n,k-1)+p(n-k,n) 预先计算p</span><script type="math/tex">p(n,k)=p(n,k-1)+p(n-k,n) 预先计算p</script></span></p>
+<p>再根据 <span class="arithmatex"><span class="MathJax_Preview">p_{\le X}(N)=\sum_{i=0}^{X}p(X,i)</span><script type="math/tex">p_{\le X}(N)=\sum_{i=0}^{X}p(X,i)</script></span> 加和即可  </p>
+<p><strong>至多一个</strong></p>
+<p><a href="https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_K">例题</a></p>
+<p>此情况同之前一样，故直接给出答案: <span class="arithmatex"><span class="MathJax_Preview">[N\le X]</span><script type="math/tex">[N\le X]</script></span></p>
+<p><strong>至少一个</strong></p>
+<p><a href="https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_L">例题</a></p>
+<p>由于每个都需要至少需要一个  </p>
+<p>所以先对每个盒子都放一个:</p>
+<p>答案为： <span class="arithmatex"><span class="MathJax_Preview">p_{\le X}(N-X)</span><script type="math/tex">p_{\le X}(N-X)</script></span>  </p>
+<h4 id="_5">模板仅供参考</h4>
+<pre><code class="language-cpp">using i64 = long long;
+template &lt;typename T, T MOD = 1000000007&gt; struct Mint {
+    inline static constexpr T mod = MOD;
+    T v;
+    Mint() : v(0) {}
+    Mint(signed v) : v(v) {}
+    Mint(long long t) {
+        v = t % MOD;
+        if (v &lt; 0)
+            v += MOD;
+    }
+
+    Mint pow(long long k) {
+        Mint res(1), tmp(v);
+        while (k) {
+            if (k &amp; 1)
+                res *= tmp;
+            tmp *= tmp;
+            k &gt;&gt;= 1;
+        }
+        return res;
+    }
+
+    static Mint add_identity() { return Mint(0); }
+    static Mint mul_identity() { return Mint(1); }
+
+    Mint inv() { return pow(MOD - 2); }
+
+    Mint &amp;operator+=(Mint a) {
+        v += a.v;
+        if (v &gt;= MOD)
+            v -= MOD;
+        return *this;
+    }
+    Mint &amp;operator-=(Mint a) {
+        v += MOD - a.v;
+        if (v &gt;= MOD)
+            v -= MOD;
+        return *this;
+    }
+    Mint &amp;operator*=(Mint a) {
+        v = 1LL * v * a.v % MOD;
+        return *this;
+    }
+    Mint &amp;operator/=(Mint a) { return (*this) *= a.inv(); }
+
+    Mint operator+(Mint a) const { return Mint(v) += a; }
+    Mint operator-(Mint a) const { return Mint(v) -= a; }
+    Mint operator*(Mint a) const { return Mint(v) *= a; }
+    Mint operator/(Mint a) const { return Mint(v) /= a; }
+
+    Mint operator+() const { return *this; }
+    Mint operator-() const { return v ? Mint(MOD - v) : Mint(v); }
+
+    bool operator==(const Mint a) const { return v == a.v; }
+    bool operator!=(const Mint a) const { return v != a.v; }
+};
+template &lt;typename T, T MOD&gt;
+std::ostream &amp;operator&lt;&lt;(std::ostream &amp;os, Mint&lt;T, MOD&gt; m) {
+    os &lt;&lt; m.v;
+    return os;
+}
+
+using Z = Mint&lt;i64&gt;;
+
+struct Combination {
+    std::vector&lt;Z&gt; fac, ifac;
+    int N;
+    Combination(int _N) : N(2 * _N), fac(2 * _N + 1), ifac(2 * _N + 1) {
+      fac[0] = Z(1);
+      for (int i = 1; i &lt;= N; i++) {
+        fac[i] = fac[i - 1] * Z(i);
+      }
+      ifac[N] = fac[N].inv();
+      for (int i = N - 1; i &gt;= 0; i--) {
+        ifac[i] = ifac[i + 1] * Z(i + 1);
+      }
+    }
+
+    Z C(int n, int k) {
+        if (n &lt; k or n &lt; 0 or k &lt; 0) {
+            return Z(0);
+        }
+        return fac[n] * ifac[n - k] * ifac[k];
+    }
+    Z P(int n, int k) {
+        if (n &lt; k or n &lt; 0 or k &lt; 0) {
+            return Z(0);
+        }
+        return fac[n] * ifac[n - k];
+    }
+    Z H(int n,int k){
+      return C(n+k-1,n);
+    }
+    Z S(int n,int k){
+      Z ans=0;
+      for(i64 i=0;i&lt;=k;i++){
+        if((k-i)%2==0){
+          ans+=C(k,i)*Z(i).pow(n);
+        }
+        else{
+          ans-=C(k,i)*Z(i).pow(n);
+        }
+      }
+      return ans*ifac[k];
+    }
+};
+
+</code></pre>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.081f42fc.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>
