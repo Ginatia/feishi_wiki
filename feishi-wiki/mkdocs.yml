@@ -1,5 +1,5 @@
 site_name: feishi-wiki
-
+site_url: https://feishili.netlify.app/
 theme:
   name: material
   features:
