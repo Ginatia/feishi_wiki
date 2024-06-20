@@ -1,0 +1,45 @@
+site_name: feishi
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+
+markdown_extensions:
+  - pymdownx.arithmatex
+
+extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js
+  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML
+
+extra_css:
+  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML
+
+
+nav:
+  - 关于: index.md
+  - Math:
+    - math/GCD_Convolution.md
+  - Combinatorics:
+    - Combinatorics/combination.md
+  - dp:
+    - dp/bit_dp.md
+    - dp/dp_on_tree.md
+    - dp/dp_on_digits.md
+    - dp/range_dp.md
+  - miscellaneous:
+    - miscellaneous/two_pointer.md
+  - Atcoder:
+    - atc/ABC015.md
+    - atc/ABC016.md
+    - atc/ABC036.md
+    - atc/ABC110.md
+    - atc/ABC127.md
+    - atc/ABC128.md
+    - atc/ABC133.md
+    - atc/ABC160.md
+    - atc/ABC170.md
+    - atc/ABC284.md
+    - atc/ABC325.md
+    - atc/ABC349.md
+    - atc/ABC127.md
