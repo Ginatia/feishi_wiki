@@ -27,6 +27,7 @@ nav:
     - dp/dp_on_tree.md
     - dp/dp_on_digits.md
     - dp/range_dp.md
+    - dp/dp_probability.md
   - miscellaneous:
     - miscellaneous/two_pointer.md
   - Atcoder:
@@ -43,5 +44,7 @@ nav:
     - atc/ABC325.md
     - atc/ABC349.md
     - atc/ABC127.md
+  - Codeforces:
+    - cf/CF560.md
   - Problem:
     - problem/The_Gourmet.md
