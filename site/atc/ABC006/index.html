@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://feishili.netlify.app/atc/ABC284/">
+        <link rel="canonical" href="https://feishili.netlify.app/atc/ABC006/">
       
       
-        <link rel="prev" href="../ABC170/">
+        <link rel="prev" href="../../miscellaneous/two_pointer/">
       
       
-        <link rel="next" href="../ABC325/">
+        <link rel="next" href="../ABC015/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>ABC284 - feishi-wiki</title>
+        <title>ABC006 - feishi-wiki</title>
       
     
     
@@ -65,11 +65,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#_1" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -100,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ABC284
+              ABC006
             
           </span>
         </div>
@@ -262,7 +257,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../ABC006/" class="md-tabs__link">
+        <a href="./" class="md-tabs__link">
           
   
   Atcoder
@@ -757,10 +752,17 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../ABC006/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -769,6 +771,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -967,28 +970,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    ABC284
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../ABC284/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -997,51 +982,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      问题
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    <span class="md-ellipsis">
-      解法1:字符串哈希
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-z-function" class="md-nav__link">
-    <span class="md-ellipsis">
-      解法2: Z function
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1246,41 +1186,6 @@
   
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      问题
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    <span class="md-ellipsis">
-      解法1:字符串哈希
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-z-function" class="md-nav__link">
-    <span class="md-ellipsis">
-      解法2: Z function
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1294,250 +1199,39 @@
                   
 
 
-  <h1>ABC284</h1>
+  <h1>ABC006</h1>
 
-<p><a href="https://atcoder.jp/contests/abc284/tasks/abc284_f">F - ABCBAC</a></p>
-<h3 id="_1">问题</h3>
-<p>对于长度为 <span class="arithmatex"><span class="MathJax_Preview">N</span><script type="math/tex">N</script></span> 的字符串 <span class="arithmatex"><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span> 和整数 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span>  </p>
-<p>定义 <span class="arithmatex"><span class="MathJax_Preview">f_i(S)</span><script type="math/tex">f_i(S)</script></span> = 
-- <span class="arithmatex"><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span> 的前 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> 个 字符
-- <span class="arithmatex"><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span> 反转之后的字符串
-- <span class="arithmatex"><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span> 末尾的 <span class="arithmatex"><span class="MathJax_Preview">N-i</span><script type="math/tex">N-i</script></span> 个字符  </p>
-<p>按照顺序连接得到</p>
-<p>给定长度为 <span class="arithmatex"><span class="MathJax_Preview">2N</span><script type="math/tex">2N</script></span> 的字符串 <span class="arithmatex"><span class="MathJax_Preview">T</span><script type="math/tex">T</script></span><br />
-找到满足 <span class="arithmatex"><span class="MathJax_Preview">f_i(S)=T</span><script type="math/tex">f_i(S)=T</script></span> 的长度为 <span class="arithmatex"><span class="MathJax_Preview">N</span><script type="math/tex">N</script></span> 的字符串 <span class="arithmatex"><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span>，和整数 <span class="arithmatex"><span class="MathJax_Preview">i(0\leq i \leq N)</span><script type="math/tex">i(0\leq i \leq N)</script></span> </p>
-<p>若不存在，输出 <span class="arithmatex"><span class="MathJax_Preview">-1</span><script type="math/tex">-1</script></span>  </p>
-<h3 id="1">解法1:字符串哈希</h3>
-<p>直接考虑拼接字符串</p>
-<p>考虑已经存在这样的字符串 <span class="arithmatex"><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span> 和整数 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span>    </p>
-<p><span class="arithmatex"><span class="MathJax_Preview">T[0,i)+T[N+i,2N)=rev(T[i,i+N))</span><script type="math/tex">T[0,i)+T[N+i,2N)=rev(T[i,i+N))</script></span></p>
-<p>使用字符串哈希可以做到 <span class="arithmatex"><span class="MathJax_Preview">O(1)</span><script type="math/tex">O(1)</script></span> 拼接</p>
-<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
-using i64 = long long;
-
-using u64 = uint64_t;
-u64 rng64() {
-  static u64 x =
-      u64(std::chrono::duration_cast&lt;std::chrono::nanoseconds&gt;(
-              std::chrono::high_resolution_clock::now().time_since_epoch())
-              .count()) *
-      10150724397891781847ULL;
-  x ^= x &lt;&lt; 7;
-  return x ^= x &gt;&gt; 9;
+<p><a href="https://atcoder.jp/contests/abc006/tasks/abc006_1">A - 世界のFizzBuzz</a></p>
+<p><span class="arithmatex"><span class="MathJax_Preview">若 3|N，输出YES，否则输出NO</span><script type="math/tex">若 3|N，输出YES，否则输出NO</script></span>  </p>
+<p><a href="https://atcoder.jp/contests/abc006/tasks/abc006_2">B - トリボナッチ数列</a></p>
+<p><span class="arithmatex"><span class="MathJax_Preview">输出斐波那契数列的第N项，并对10007取模</span><script type="math/tex">输出斐波那契数列的第N项，并对10007取模</script></span>  </p>
+<p><a href="https://atcoder.jp/contests/abc006/tasks/abc006_3">C - スフィンクスのなぞなぞ</a>  </p>
+<p><span class="arithmatex"><span class="MathJax_Preview">x+y+z=N</span><script type="math/tex">x+y+z=N</script></span>  </p>
+<p><span class="arithmatex"><span class="MathJax_Preview">2x+3y+4z=M</span><script type="math/tex">2x+3y+4z=M</script></span>  </p>
+<p><span class="arithmatex"><span class="MathJax_Preview">N\le 10^5,M\le 5\times 10^5</span><script type="math/tex">N\le 10^5,M\le 5\times 10^5</script></span>  </p>
+<p><span class="arithmatex"><span class="MathJax_Preview">解方程组，若无解，则输出-1 -1 -1</span><script type="math/tex">解方程组，若无解，则输出-1 -1 -1</script></span></p>
+<p><span class="arithmatex"><span class="MathJax_Preview">由于这是一个欠定线性方程组，故枚举z之后，就为一个适定线性方程组</span><script type="math/tex">由于这是一个欠定线性方程组，故枚举z之后，就为一个适定线性方程组</script></span>  </p>
+<p><span class="arithmatex"><span class="MathJax_Preview">x=3N-M+z,y=M-2N-2z</span><script type="math/tex">x=3N-M+z,y=M-2N-2z</script></span>  </p>
+<p><a href="https://atcoder.jp/contests/abc006/tasks/abc006_4">D - トランプ挿入ソート</a>  </p>
+<p><span class="arithmatex"><span class="MathJax_Preview">有N长的序列，每次拿出一个数并将其插入到序列，请问将序列升序排序所需的最少的操作次数</span><script type="math/tex">有N长的序列，每次拿出一个数并将其插入到序列，请问将序列升序排序所需的最少的操作次数</script></span>  </p>
+<p><span class="arithmatex"><span class="MathJax_Preview">注意到,每次操作都不影响序列其他的数的相对次序，所以如果找到一个LIS(最长上升子序列),则剩下的数的集合个数即为最少操作次数</span><script type="math/tex">注意到,每次操作都不影响序列其他的数的相对次序，所以如果找到一个LIS(最长上升子序列),则剩下的数的集合个数即为最少操作次数</script></span>  </p>
+<p><span class="arithmatex"><span class="MathJax_Preview">答案即为:N-LIS</span><script type="math/tex">答案即为:N-LIS</script></span>  </p>
+<pre><code class="language-cpp">int LIS(std::vector&lt;int&gt;&amp;a){
+  int n=(int)a.size();
+  int INF=std::numeric_limits&lt;int&gt;::max();
+  std::vector&lt;int&gt;dp(n,INF);
+  for(int i=0;i&lt;n;i++){
+    *std::lower_bound(dp.begin(),dp.end(),a[i])=a[i];
+  }
+  return std::lower_bound(dp.begin(),dp.end(),INF)-dp.begin();
 }
-
-i64 rng(u64 limit) { return rng64() % limit; }
-
-i64 rng(i64 l, i64 r) { return l + rng64() % (r - l); }
-
-using Z = u64;
-
-const Z MOD = (1LL &lt;&lt; 61) - 1;
-Z base = Z(rng(3,MOD - 1));
-
-Z safe_mod(Z x) {
-  if (x &gt;= MOD)
-    x -= MOD;
-  return x;
-}
-
-Z mul(Z a, Z b) {
-  Z au = a &gt;&gt; 31;
-  Z ad = a &amp; ((1UL&lt;&lt;31)-1);
-  Z bu = b &gt;&gt; 31;
-  Z bd = b &amp; ((1UL&lt;&lt;31)-1);
-  Z mid = ad * bu + au * bd;
-  Z midu = mid &gt;&gt; 30;
-  Z midd = mid &amp; ((1UL&lt;&lt;30)-1);
-  Z ans = au * bu * 2 + midu + (midd &lt;&lt; 31) + ad * bd;
-  ans = (ans &gt;&gt; 61) + (ans &amp; MOD);
-  return safe_mod(ans);
-}
-
-struct RollingHash {
-  std::vector&lt;Z&gt; ha, pw;
-  RollingHash(const std::string &amp;s) {
-    int n = s.size();
-    ha.assign(n + 1, Z(0));
-    pw.assign(n + 1, Z(0));
-    pw[0] = 1;
-    for (int i = 0; i &lt; n; i++) {
-      ha[i + 1] = safe_mod(mul(ha[i],base) + s[i]);
-      pw[i + 1] = mul(pw[i],base);
-    }
-  }
-  //[l, r)
-  Z get(int l, int r) const { return safe_mod(ha[r]+MOD - mul(ha[l],pw[r-l])); }
-  Z get() const { return ha.back(); }
-
-  Z merge(Z hl, Z hr, int hr_len) const {
-    return safe_mod(mul(hl,pw[hr_len]) + hr);
-  }
-
-
-  // Lcp of S[a:] and S[b:]
-  int getLcp(int a, int b) const {
-    int len = std::min((int)ha.size() - 1 - a, (int)ha.size() - 1 - b);
-    int lo = 0, hi = len + 1;
-    while (hi - lo &gt; 1) {
-      int mid = (lo + hi) &gt;&gt; 1;
-      if (get(a, a + mid) != get(b, b + mid))
-        hi = mid;
-      else
-        lo = mid;
-    }
-    return lo;
-  }
-
-  // Lcp of S[a:] and T[b:]
-  int getLcp(const RollingHash &amp;T, int a, int b) const {
-    int len = std::min((int)ha.size() - 1 - a, (int)T.ha.size() - 1 - b);
-    int lo = 0, hi = len + 1;
-    while (hi - lo &gt; 1) {
-      int mid = (lo + hi) &gt;&gt; 1;
-      if (get(a, a + mid) != T.get(b, b + mid))
-        hi = mid;
-      else
-        lo = mid;
-    }
-    return lo;
-  }
-};
-
 void solve() {
-  int N;
-  std::string s;
-  std::cin &gt;&gt; N &gt;&gt; s;
-
-  RollingHash rhs(s);
-  std::reverse(s.begin(), s.end());
-  RollingHash rhrs(s);
-
-  for (int i = 0; i &lt;= N; i++) {
-    auto x = rhs.get(0, i);
-    auto y = rhs.get(N + i, 2 * N);
-
-    if (rhs.merge(x, y, N - i) == rhrs.get(N - i, 2 * N - i)) {
-      std::cout &lt;&lt; s.substr(N - i, N) &lt;&lt; '\n' &lt;&lt; i &lt;&lt; '\n';
-      return;
-    }
+  int n;std::cin&gt;&gt;n;
+  std::vector&lt;int&gt;a(n);
+  for(auto&amp;x:a){
+    std::cin&gt;&gt;x;
   }
-
-  std::cout &lt;&lt; &quot;-1\n&quot;;
-}
-int main() {
-  std::cin.tie(nullptr)-&gt;sync_with_stdio(false);
-  solve();
-}
-</code></pre>
-<h3 id="2-z-function">解法2: Z function</h3>
-<p><span class="arithmatex"><span class="MathJax_Preview">T = S[0:i] + rev(S) + S[i:N]</span><script type="math/tex">T = S[0:i] + rev(S) + S[i:N]</script></span></p>
-<p>显然有:</p>
-<p><span class="arithmatex"><span class="MathJax_Preview">T = S[0:i] + rev(S[i:N]) + rev(S[0:i]) + S[i:N]</span><script type="math/tex">T = S[0:i] + rev(S[i:N]) + rev(S[0:i]) + S[i:N]</script></span></p>
-<p>考虑反转后两个字符串:  </p>
-<p><span class="arithmatex"><span class="MathJax_Preview">S[0:i]+rev(S[i:N]) + rev(S[i:N]) + S[0:i)</span><script type="math/tex">S[0:i]+rev(S[i:N]) + rev(S[i:N]) + S[0:i)</script></span>  </p>
-<p>发现:</p>
-<p><span class="arithmatex"><span class="MathJax_Preview">T[0:i]=rev(T[N,N+i])</span><script type="math/tex">T[0:i]=rev(T[N,N+i])</script></span></p>
-<p><span class="arithmatex"><span class="MathJax_Preview">T[N+i:2N]=rev(T[i:N])</span><script type="math/tex">T[N+i:2N]=rev(T[i:N])</script></span></p>
-<p>设 <span class="arithmatex"><span class="MathJax_Preview">A=T[0:N],B=rev(T[N:2N])</span><script type="math/tex">A=T[0:N],B=rev(T[N:2N])</script></span></p>
-<p>存在 <span class="arithmatex"><span class="MathJax_Preview">i(0\leq i \leq N) 满足 A[0:i] = B[N-i:N],A[i:N]=B[0:N-i]</span><script type="math/tex">i(0\leq i \leq N) 满足 A[0:i] = B[N-i:N],A[i:N]=B[0:N-i]</script></span></p>
-<p>设 <span class="arithmatex"><span class="MathJax_Preview">X=A+B，Y=B+A</span><script type="math/tex">X=A+B，Y=B+A</script></span></p>
-<p>那么存在 <span class="arithmatex"><span class="MathJax_Preview">Z(X)[2N-i]=i \quad Z(Y)[N+i]=N-i</span><script type="math/tex">Z(X)[2N-i]=i \quad Z(Y)[N+i]=N-i</script></span></p>
-<p>答案为: <span class="arithmatex"><span class="MathJax_Preview">T[0:i]+T[i+N:2N]</span><script type="math/tex">T[0:i]+T[i+N:2N]</script></span></p>
-<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
-using i64 = long long;
-
-#include &lt;string&gt;
-#include &lt;vector&gt;
-namespace internal {
-std::vector&lt;int&gt; z_func(const std::string &amp;s) {
-  int n = s.size();
-  std::vector&lt;int&gt; z(n);
-  int l = 0, r = 0;
-  for (int i = 1; i &lt; n; i++) {
-    if (i &lt; r) {
-      z[i] = std::min(r - i, z[i - l]);
-    }
-    while (i + z[i] &lt; n &amp;&amp; s[z[i]] == s[i + z[i]]) {
-      z[i]++;
-    }
-    if (i + z[i] &gt; r) {
-      l = i;
-      r = i + z[i];
-    }
-  }
-  return z;
-}
-std::vector&lt;int&gt; find_occur(const std::string &amp;t, const std::string &amp;p) {
-  std::vector&lt;int&gt; idx;
-  int len_p = p.size(), len_t = t.size();
-  std::string s = p + &quot;#&quot; + t;
-  auto z = z_func(s);
-  for (int i = 0; i &lt; len_t; i++) {
-    int k = z[i + len_p + 1];
-    if (k == len_p) {
-      idx.emplace_back(i);
-    }
-  }
-  return idx;
-}
-
-std::vector&lt;int&gt; prefix_func(const std::string &amp;s) {
-  int n = s.size();
-  std::vector&lt;int&gt; pi(n);
-  for (int i = 1; i &lt; n; i++) {
-    int j = pi[i - 1];
-    while (j &gt; 0 &amp;&amp; s[i] != s[j]) {
-      j = pi[j - 1];
-    }
-    if (s[i] == s[j]) {
-      j++;
-    }
-    pi[i] = j;
-  }
-  return pi;
-}
-
-bool match(const std::string &amp;t, const std::string &amp;p) {
-  auto lps = prefix_func(p + &quot;#&quot; + t);
-  int sz1 = t.size(), sz2 = p.size();
-  for (int i = sz2 + 1; i &lt;= sz1 + sz2; i++) {
-    if (lps[i] == sz2) {
-      return true;
-    }
-  }
-  return false;
-}
-} // namespace internal
-
-void solve()
-{
-  int n;std::string t;
-  std::cin&gt;&gt;n&gt;&gt;t;
-
-  std::string a=t.substr(0,n);
-  std::string b=t.substr(n);
-  std::reverse(b.begin(),b.end());
-
-  std::string x=a+b,y=b+a;
-  auto zx=internal::z_func(x);
-  auto zy=internal::z_func(y);
-  zx.push_back(0);
-  zy.push_back(0);
-
-  for(int i=0;i&lt;=n;i++){
-    if(zx[2*n-i]&lt;i)continue;
-    if(zy[n+i]&lt;n-i)continue;
-    std::cout&lt;&lt;t.substr(0,i)+t.substr(n+i)&lt;&lt;'\n';
-    std::cout&lt;&lt;i&lt;&lt;'\n';
-    return;
-  }
-  std::cout&lt;&lt;&quot;-1\n&quot;;
-}
-int main()
-{
-    std::cin.tie(nullptr)-&gt;sync_with_stdio(false);
-    solve();
+  std::cout&lt;&lt;n-LIS(a)&lt;&lt;'\n';
 }
 </code></pre>
 
@@ -1546,9 +1240,6 @@ int main()
 
 
 
-
-  
-  
 
 
 

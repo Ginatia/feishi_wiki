@@ -31,6 +31,7 @@ nav:
   - miscellaneous:
     - miscellaneous/two_pointer.md
   - Atcoder:
+    - atc/ABC006.md
     - atc/ABC015.md
     - atc/ABC016.md
     - atc/ABC036.md
