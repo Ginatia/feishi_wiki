@@ -1214,7 +1214,8 @@
 <p><span class="arithmatex"><span class="MathJax_Preview">x=3N-M+z,y=M-2N-2z</span><script type="math/tex">x=3N-M+z,y=M-2N-2z</script></span>  </p>
 <p><a href="https://atcoder.jp/contests/abc006/tasks/abc006_4">D - トランプ挿入ソート</a>  </p>
 <p><span class="arithmatex"><span class="MathJax_Preview">有N长的序列，每次拿出一个数并将其插入到序列，请问将序列升序排序所需的最少的操作次数</span><script type="math/tex">有N长的序列，每次拿出一个数并将其插入到序列，请问将序列升序排序所需的最少的操作次数</script></span>  </p>
-<p><span class="arithmatex"><span class="MathJax_Preview">注意到,每次操作都不影响序列其他的数的相对次序，所以如果找到一个LIS(最长上升子序列),则剩下的数的集合个数即为最少操作次数</span><script type="math/tex">注意到,每次操作都不影响序列其他的数的相对次序，所以如果找到一个LIS(最长上升子序列),则剩下的数的集合个数即为最少操作次数</script></span>  </p>
+<p><span class="arithmatex"><span class="MathJax_Preview">注意到,每次操作都不影响序列其他的数的相对次序</span><script type="math/tex">注意到,每次操作都不影响序列其他的数的相对次序</script></span></p>
+<p><span class="arithmatex"><span class="MathJax_Preview">所以如果找到一个LIS(最长上升子序列),则剩下的数的集合个数即为最少操作次数</span><script type="math/tex">所以如果找到一个LIS(最长上升子序列),则剩下的数的集合个数即为最少操作次数</script></span></p>
 <p><span class="arithmatex"><span class="MathJax_Preview">答案即为:N-LIS</span><script type="math/tex">答案即为:N-LIS</script></span>  </p>
 <pre><code class="language-cpp">int LIS(std::vector&lt;int&gt;&amp;a){
   int n=(int)a.size();
