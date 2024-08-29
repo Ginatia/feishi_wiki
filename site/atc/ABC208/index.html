@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://feishili.netlify.app/atc/ABC152/">
+        <link rel="canonical" href="https://feishili.netlify.app/atc/ABC208/">
       
       
-        <link rel="prev" href="../ABC133/">
+        <link rel="prev" href="../ABC170/">
       
       
-        <link rel="next" href="../ABC160/">
+        <link rel="next" href="../ABC284/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>ABC152 - feishi-wiki</title>
+        <title>ABC208 - feishi-wiki</title>
       
     
     
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ABC152
+              ABC208
             
           </span>
         </div>
@@ -920,17 +920,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../ABC152/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -939,7 +932,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -991,10 +983,17 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../ABC208/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1003,6 +1002,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -1241,110 +1241,55 @@
                   
 
 
-  <h1>ABC152</h1>
+  <h1>ABC208</h1>
 
-<p><a href="https://atcoder.jp/contests/abc152/tasks/abc152_d">D - Handstand 2</a></p>
-<p><span class="arithmatex"><span class="MathJax_Preview">给定N,求得满足条件的整数组(A,B)的个数</span><script type="math/tex">给定N,求得满足条件的整数组(A,B)的个数</script></span>  </p>
-<p><span class="arithmatex"><span class="MathJax_Preview">A的首位数位=B的末尾数位，A的末尾数位=B的首位数位</span><script type="math/tex">A的首位数位=B的末尾数位，A的末尾数位=B的首位数位</script></span>  </p>
-<p><span class="arithmatex"><span class="MathJax_Preview">设一个数的首位数位与末尾数位为(x,y)</span><script type="math/tex">设一个数的首位数位与末尾数位为(x,y)</script></span>  </p>
-<p><span class="arithmatex"><span class="MathJax_Preview">则A:x...y=B:y...x</span><script type="math/tex">则A:x...y=B:y...x</script></span>  </p>
-<p><span class="arithmatex"><span class="MathJax_Preview">记录1-N每个数的首位与末尾数位的贡献次数cnt[x][y]</span><script type="math/tex">记录1-N每个数的首位与末尾数位的贡献次数cnt[x][y]</script></span>  </p>
-<p><span class="arithmatex"><span class="MathJax_Preview">枚举数位组A=(x,y),B=(y,x)</span><script type="math/tex">枚举数位组A=(x,y),B=(y,x)</script></span>  </p>
+<p><a href="https://atcoder.jp/contests/abc208/tasks/abc208_e">E - Digit Products</a>  </p>
+<p><span class="arithmatex"><span class="MathJax_Preview">[1,N]有多少个数满足:数位之积\le K,N\le 10^{18},K\le 10^{9}</span><script type="math/tex">[1,N]有多少个数满足:数位之积\le K,N\le 10^{18},K\le 10^{9}</script></span>  </p>
+<p><span class="arithmatex"><span class="MathJax_Preview">可以发现虽然数位之积很大,但是因为需要\le K</span><script type="math/tex">可以发现虽然数位之积很大,但是因为需要\le K</script></span></p>
+<p><span class="arithmatex"><span class="MathJax_Preview">所以是离散的若干个数</span><script type="math/tex">所以是离散的若干个数</script></span>  </p>
+<p><span class="arithmatex"><span class="MathJax_Preview">可以通过简单的枚举知道这样的数位之积为5195个</span><script type="math/tex">可以通过简单的枚举知道这样的数位之积为5195个</script></span>  </p>
+<p><span class="arithmatex"><span class="MathJax_Preview">所以使用map离散记忆化</span><script type="math/tex">所以使用map离散记忆化</script></span>  </p>
+<p><span class="arithmatex"><span class="MathJax_Preview">在搜索过程中,如果一直都枚举的是前导0</span><script type="math/tex">在搜索过程中,如果一直都枚举的是前导0</script></span>  </p>
+<p><span class="arithmatex"><span class="MathJax_Preview">那么这个数的前导0不能算作贡献</span><script type="math/tex">那么这个数的前导0不能算作贡献</script></span>  </p>
+<p><span class="arithmatex"><span class="MathJax_Preview">也就是说012=1\times 2的贡献,而不是0\times 1\times 2=0</span><script type="math/tex">也就是说012=1\times 2的贡献,而不是0\times 1\times 2=0</script></span>  </p>
+<p><span class="arithmatex"><span class="MathJax_Preview">也就是说前导0影响结果,需要开一维进行记忆</span><script type="math/tex">也就是说前导0影响结果,需要开一维进行记忆</script></span>  </p>
+<p><span class="arithmatex"><span class="MathJax_Preview">使用map&lt;i64,int&gt;dp[20][2][2]进行记忆化</span><script type="math/tex">使用map<i64,int>dp[20][2][2]进行记忆化</script></span>  </p>
+<p><span class="arithmatex"><span class="MathJax_Preview">[枚举长度][是否贴上限][是否有前导0]</span><script type="math/tex">[枚举长度][是否贴上限][是否有前导0]</script></span>  </p>
 <pre><code class="language-cpp">using i64 = long long;
-std::pair&lt;int, int&gt;get(int x){
-  std::string s=std::to_string(x);
-  int a=s.front()-'0';
-  int b=s.back()-'0';
-  return {a,b};
-}
-void solve() {
-  int n;std::cin&gt;&gt;n;
-  std::vector&lt;std::array&lt;int, 10&gt;&gt;cnt(10);
-  for(int i=1;i&lt;=n;i++){
-    auto[x,y]=get(i);
-    cnt[x][y]++;
-  }
-  i64 ans=0;
-  for(int x=0;x&lt;=9;x++){
-    for(int y=0;y&lt;=9;y++){
-      ans+=cnt[x][y]*cnt[y][x];
+std::map&lt;i64, i64&gt; dp[20][2][2];
+i64 calc(std::string num, i64 K) {
+  int n=(int)num.size();
+  auto dfs=[&amp;](auto self,int i,bool is_limit,bool lead_zero,i64 cur)-&gt;i64{
+    if(i==n){
+      return cur&lt;=K and !lead_zero;
     }
-  }
-  std::cout&lt;&lt;ans&lt;&lt;'\n';
-}
-
-</code></pre>
-<p><a href="https://atcoder.jp/contests/abc152/tasks/abc152_e">E - Flatten</a></p>
-<p><span class="arithmatex"><span class="MathJax_Preview">A_iB_i=A_jB_j=K</span><script type="math/tex">A_iB_i=A_jB_j=K</script></span></p>
-<p><span class="arithmatex"><span class="MathJax_Preview">B_i=\frac{K}{A_i},B_j=\frac{K}{A_j}</span><script type="math/tex">B_i=\frac{K}{A_i},B_j=\frac{K}{A_j}</script></span>  </p>
-<p><span class="arithmatex"><span class="MathJax_Preview">i\in[1,n],A_i|K</span><script type="math/tex">i\in[1,n],A_i|K</script></span>  </p>
-<p><span class="arithmatex"><span class="MathJax_Preview">K=lcm(A)</span><script type="math/tex">K=lcm(A)</script></span></p>
-<p><span class="arithmatex"><span class="MathJax_Preview">ans=\sum_{i=1}^{N}\frac{K}{A_i} \mod {10^9+7}</span><script type="math/tex">ans=\sum_{i=1}^{N}\frac{K}{A_i} \mod {10^9+7}</script></span></p>
-<p><span class="arithmatex"><span class="MathJax_Preview">由于直接按照公式求lcm,中间结果会出现大整数的情况</span><script type="math/tex">由于直接按照公式求lcm,中间结果会出现大整数的情况</script></span>  </p>
-<p><span class="arithmatex"><span class="MathJax_Preview">方案1:使用python</span><script type="math/tex">方案1:使用python</script></span></p>
-<p><span class="arithmatex"><span class="MathJax_Preview">方案2:分解A_i,得到其质因子分解，求得每个质因子的最大幂次即可</span><script type="math/tex">方案2:分解A_i,得到其质因子分解，求得每个质因子的最大幂次即可</script></span>  </p>
-<pre><code class="language-python">from functools import reduce
-from math import gcd
-def LI():
-    return list(map(int, input().split()))
-
-def I():
-    return int(input())
-
-def solve():
-    N=I()
-    a=LI()
-    lcm=reduce(lambda x,y:x//gcd(x,y)*y,a)
-    MOD=10**9+7
-    ans = sum((lcm//x)%MOD for x in a)%MOD
-    print(ans)
-
-solve()
-
-</code></pre>
-<pre><code class="language-cpp">void solve() {
-  int n;
-  std::cin&gt;&gt;n;
-  std::vector&lt;int&gt;a(n);
-  for(auto&amp;x:a){
-    std::cin&gt;&gt;x;
-  }
-  std::map&lt;int, int&gt;cnt;
-
-  auto prime_div=[&amp;](int x){
-    for(int i=2;i*i&lt;=x;i++){
-      if(x%i)continue;
-      int exp=0;
-      while (x%i==0) {
-        exp++;
-        x/=i;
-      }
-      if(cnt.find(i)!=cnt.end()){
-        cnt[i]=std::max(cnt[i],exp);
+    auto&amp;mp=dp[i][is_limit][lead_zero];
+    if(mp.find(cur)!=mp.end()){
+      return mp[cur];
+    }
+    i64 ans=0;
+    int up=is_limit?num[i]-'0':9;
+    for(int d=0;d&lt;=up;d++){
+      if(lead_zero){
+        if(d==0){
+          ans += self(self, i + 1, is_limit &amp;&amp; d == up, true, 0);
+        }
+        else{
+          ans+=self(self,i+1,is_limit &amp;&amp; d==up,false,d);
+        }
       }
       else{
-        cnt[i]=exp;
+        ans+=self(self,i+1,is_limit &amp;&amp; d==up,false,cur*d);
       }
     }
-    if (cnt.find(x) != cnt.end()) {
-      cnt[x] = std::max(cnt[x], 1);
-    } else {
-      cnt[x] = 1;
-    }
-    return;
+    return mp[cur]=ans;
   };
-  for(const auto&amp;x:a){
-    prime_div(x);
-  }
-  Z lcm=1;
-  for(auto&amp;[x,y]:cnt){
-    lcm*=Z(x).pow(y);
-  }
-  Z ans=0;
-  for(auto&amp;x:a){
-    ans+=lcm/Z(x);
-  }
-  std::cout&lt;&lt;ans&lt;&lt;'\n';
+  return dfs(dfs,0,true,true,1);
+}
+void solve() {
+  i64 N, K;
+  std::cin&gt;&gt;N&gt;&gt;K;
+  std::cout&lt;&lt;calc(std::to_string(N), K)&lt;&lt;'\n';
 }
 </code></pre>
 
