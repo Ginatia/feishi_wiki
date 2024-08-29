@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://feishili.netlify.app/atc/ABC016/">
+        <link rel="canonical" href="https://feishili.netlify.app/atc/ABC343/">
       
       
-        <link rel="prev" href="../ABC015/">
+        <link rel="prev" href="../ABC325/">
       
       
-        <link rel="next" href="../ABC036/">
+        <link rel="next" href="../ABC349/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>ABC016 - feishi-wiki</title>
+        <title>ABC343 - feishi-wiki</title>
       
     
     
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ABC016
+              ABC343
             
           </span>
         </div>
@@ -794,17 +794,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../ABC016/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -813,7 +806,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -1054,10 +1046,17 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../ABC343/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1066,6 +1065,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -1262,94 +1262,78 @@
                   
 
 
-  <h1>ABC016</h1>
+  <h1>ABC343</h1>
 
-<p><a href="https://atcoder.jp/contests/abc016/tasks/abc016_3">C - 友達の友達</a></p>
-<p>将朋友关系抽象为边，找到最小距离为2的所有朋友关系即可  </p>
-<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
-#include &lt;limits&gt;
-#include &lt;vector&gt;
-using i64 = long long;
-
-template &lt;typename T&gt; struct Dijkstra {
-    struct Edge {
-        int to;
-        T cost;
-        Edge(int _to, T _cost) : to(_to), cost(_cost) {}
-        bool operator&lt;(const Edge &amp;o) const { return cost &gt; o.cost; }
-    };
-    std::vector&lt;std::vector&lt;Edge&gt;&gt; G;
-    std::vector&lt;T&gt; ds;
-    std::vector&lt;int&gt; bs;
-    Dijkstra(int n) : G(n) {}
-
-    void add_edge(int u, int v, T c) { G[u].emplace_back(v, c); }
-    void build(int s) {
-        int n = G.size();
-        ds.assign(n, std::numeric_limits&lt;T&gt;::max());
-        bs.assign(n, -1);
-        std::priority_queue&lt;Edge&gt; pq;
-        ds[s] = 0;
-        pq.emplace(s, ds[s]);
-        while (not pq.empty()) {
-            auto [u, cost_u] = pq.top();
-            pq.pop();
-            if (ds[u] &lt; cost_u) {
-                continue;
-            }
-            for (auto [v, cost_v] : G[u]) {
-                if (ds[v] &gt; ds[u] + cost_v) {
-                    ds[v] = ds[u] + cost_v;
-                    bs[v] = u;
-                    pq.emplace(v, ds[v]);
-                }
-            }
-        }
+<p><a href="https://atcoder.jp/contests/abc343/tasks/abc343_f">F - Second Largest Query</a></p>
+<p><span class="arithmatex"><span class="MathJax_Preview">给定N长度的序列A</span><script type="math/tex">给定N长度的序列A</script></span></p>
+<p>有两种操作  </p>
+<p><span class="arithmatex"><span class="MathJax_Preview">1:修改A_p的值为x</span><script type="math/tex">1:修改A_p的值为x</script></span>  </p>
+<p><span class="arithmatex"><span class="MathJax_Preview">2:输出[l,r]中,A的第二大的数的个数</span><script type="math/tex">2:输出[l,r]中,A的第二大的数的个数</script></span>  </p>
+<p>单点修改线段树,关注到维护第一大与第二大的关系  </p>
+<p>在区间合并时,需要维护一个数以及一个数的个数</p>
+<p>如果左右区间的需要更新的值一样,那么增加个数,否则更新值</p>
+<p>再比较次大值,次大值分类讨论</p>
+<p>若最大值一样,只需要考虑左右区间的次大值</p>
+<p>否则次大值是左右区间中更小的最大值与更大的次大值</p>
+<p>线段树类型如下:</p>
+<pre><code class="language-cpp">struct P{
+  i64 x,num;
+  P():x(0),num(0){}
+  P(i64 _x,i64 _num):x(_x),num(_num){}
+  friend P operator+(P l,P r){
+    P t;
+    if(l.x==r.x){
+      t.x=l.x;
+      t.num=l.num+r.num;
     }
-
-    T operator[](int k) { return ds[k]; }
-    std::vector&lt;int&gt; restore(int to) {
-        std::vector&lt;int&gt; ans;
-        if (bs[to] &lt; 0) {
-            return ans;
-        }
-        while (~to) {
-            ans.emplace_back(to);
-            to = bs[to];
-        }
-        std::reverse(ans.begin(), ans.end());
-        return ans;
+    else{
+      t=(l.x&gt;r.x?l:r);
     }
+    return t;
+  }
 };
+struct S {
+  P fx,sx;//first x,second x
+  S():fx(0,0),sx(-1,0){}
+  S(P _fx,P _sx):fx(_fx),sx(_sx){}
 
-void solve()
-{
-  int N,M;
-  std::cin&gt;&gt;N&gt;&gt;M;
-  Dijkstra&lt;int&gt;g(N);
-  for(int i=0;i&lt;M;i++){
-    int a,b;
-    std::cin&gt;&gt;a&gt;&gt;b;
-    --a,--b;
-    g.add_edge(a, b, 1);
-    g.add_edge(b, a, 1);
-  }
-  auto calc=[&amp;](int s){
-    g.build(s);
-    int ans=0;
-    for(int i=0;i&lt;N;i++){
-      ans+=g[i]==2;
+  friend S operator+(S l, S r) { 
+    S t;
+    t.fx=l.fx+r.fx;
+    if(l.fx.x==r.fx.x){
+      t.sx=l.sx+r.sx;
     }
-    return ans;
-  };
-  for(int i=0;i&lt;N;i++){
-    std::cout&lt;&lt;calc(i)&lt;&lt;'\n';
+    else{
+      t.sx=(l.fx.x&gt;r.fx.x?l.sx+r.fx:l.fx+r.sx);
+    }
+    return t;
   }
-}
-int main()
-{
-    std::cin.tie(nullptr)-&gt;sync_with_stdio(false);
-    solve();
+};
+void solve() {
+  int n,q;
+  std::cin&gt;&gt;n&gt;&gt;q;
+  std::vector&lt;S&gt;a(n);
+  for(int i=0;i&lt;n;i++){
+    int x;
+    std::cin&gt;&gt;x;
+    a[i].fx=P(x,1);
+  }
+  segtree&lt;S&gt;seg(a);
+  int o,p,x,l,r;
+  while(q--){
+    std::cin&gt;&gt;o;
+    if(o==1){
+      std::cin&gt;&gt;p&gt;&gt;x;
+      --p;
+      seg.set(p,S(P(x,1),P(-1,0)));
+    }
+    else{
+      std::cin&gt;&gt;l&gt;&gt;r;
+      --l;
+      S ans=seg.prod(l,r);
+      std::cout&lt;&lt;ans.sx.num&lt;&lt;'\n';
+    }
+  }
 }
 </code></pre>
 
@@ -1358,9 +1342,6 @@ int main()
 
 
 
-
-  
-  
 
 
 
