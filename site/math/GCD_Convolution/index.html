@@ -1525,26 +1525,26 @@ f(i):[1,N]有几个数等于i\\
 显然f(i)=1,1\le i\le N\\
 </script>
 </div>
-<pre><code class="language-cpp">void solve()
-{   
-    int n;
-    std::cin&gt;&gt;n;
-    std::vector&lt;Z&gt; f(n + 1, 1);
-    auto h = gcd_conv(f, f);
-    Z ans = 0;
-
-    for (int d = 1; d &lt;= n; d++) {
-      ans += Z(mobius[d]) * Z((n / d)).pow(2);
-    }
-
-    if (ans != h[1]) {
-      std::cout &lt;&lt; &quot;NO\n&quot;;
-      std::cout &lt;&lt; n &lt;&lt; '\n';
-      std::cout &lt;&lt; ans &lt;&lt; ' ' &lt;&lt; h[1] &lt;&lt; '\n';
-      return;
-    }
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">solve</span><span class="p">()</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="p">{</span><span class="w">   </span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">n</span><span class="p">;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Z</span><span class="o">&gt;</span><span class="w"> </span><span class="n">f</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">h</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gcd_conv</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="w"> </span><span class="n">f</span><span class="p">);</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="n">Z</span><span class="w"> </span><span class="n">ans</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">d</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">      </span><span class="n">ans</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">Z</span><span class="p">(</span><span class="n">mobius</span><span class="p">[</span><span class="n">d</span><span class="p">])</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">Z</span><span class="p">((</span><span class="n">n</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">d</span><span class="p">)).</span><span class="n">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ans</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">h</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">      </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;NO</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">      </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">&#39;\n&#39;</span><span class="p">;</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">      </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">ans</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">&#39; &#39;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">h</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">&#39;\n&#39;</span><span class="p">;</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">      </span><span class="k">return</span><span class="p">;</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="p">}</span>
+</code></pre></div>
 <p><a href="https://www.luogu.com.cn/problem/P1390">P1390 公约数的和</a></p>
 <p><span class="arithmatex"><span class="MathJax_Preview">\sum_{i=1}^{n}\sum_{j=i+1}^{n}\gcd(i,j)</span><script type="math/tex">\sum_{i=1}^{n}\sum_{j=i+1}^{n}\gcd(i,j)</script></span>  </p>
 <p>首先上面的式子统计了 <span class="arithmatex"><span class="MathJax_Preview">1\le i&lt;j\le n</span><script type="math/tex">1\le i<j\le n</script></span>   </p>
@@ -1576,22 +1576,22 @@ f(i):[1,N]有几个数等于i\\
 </script>
 </div>
 <p>答案即为: <span class="arithmatex"><span class="MathJax_Preview">\frac{(S_x-S_y)}{2}</span><script type="math/tex">\frac{(S_x-S_y)}{2}</script></span></p>
-<pre><code class="language-cpp">void solve()
-{   
-    int n;
-    std::cin&gt;&gt;n;
-    std::vector&lt;i64&gt; f(n + 1,1);
-
-    auto h = gcd_conv(f, f);
-
-    i64 ans=-1LL*(n+1)*n/2LL;
-    for(int i=1;i&lt;=n;i++){
-        ans+=1LL*h[i]*i;
-    }
-    ans/=2;
-    std::cout&lt;&lt;ans&lt;&lt;'\n';
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">solve</span><span class="p">()</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="p">{</span><span class="w">   </span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">n</span><span class="p">;</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">i64</span><span class="o">&gt;</span><span class="w"> </span><span class="n">f</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">h</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gcd_conv</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="w"> </span><span class="n">f</span><span class="p">);</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="n">i64</span><span class="w"> </span><span class="n">ans</span><span class="o">=</span><span class="mi">-1LL</span><span class="o">*</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">n</span><span class="o">/</span><span class="mf">2L</span><span class="n">L</span><span class="p">;</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">        </span><span class="n">ans</span><span class="o">+=</span><span class="mf">1L</span><span class="n">L</span><span class="o">*</span><span class="n">h</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">i</span><span class="p">;</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="n">ans</span><span class="o">/=</span><span class="mi">2</span><span class="p">;</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">ans</span><span class="o">&lt;&lt;</span><span class="sc">&#39;\n&#39;</span><span class="p">;</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="p">}</span>
+</code></pre></div>
 <p><a href="https://www.luogu.com.cn/problem/P3911">P3911 最小公倍数之和</a></p>
 <p><span class="arithmatex"><span class="MathJax_Preview">\sum_{i=1}^{N}\sum_{j=1}^{N}lcm(A_i,A_j)</span><script type="math/tex">\sum_{i=1}^{N}\sum_{j=1}^{N}lcm(A_i,A_j)</script></span></p>
 <div class="arithmatex">
@@ -1612,90 +1612,90 @@ f(i):[1,N]有几个数等于i\\
 原式=\sum_{g=1}^{MX}\frac{h(g)}{g}\\
 </script>
 </div>
-<pre><code class="language-cpp">void solve()
-{   
-    int n;
-    std::cin&gt;&gt;n;
-    std::vector&lt;int&gt;a(n);
-    for(auto&amp;x:a)std::cin&gt;&gt;x;
-
-    int MX=*std::max_element(a.begin(),a.end());
-
-    std::vector&lt;i64&gt;f(MX+1);
-
-    for(auto x:a){
-        f[x]++;
-    }
-
-    for(int i=0;i&lt;=MX;i++){
-        f[i]*=i;
-    }
-
-    auto h=gcd_conv(f, f);
-
-    i64 ans=0;
-    for(int i=1;i&lt;=MX;i++){
-        ans+=h[i]/i;
-    }
-    std::cout&lt;&lt;ans&lt;&lt;'\n';
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">solve</span><span class="p">()</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="p">{</span><span class="w">   </span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">n</span><span class="p">;</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="n">a</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span><span class="n">x</span><span class="o">:</span><span class="n">a</span><span class="p">)</span><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">x</span><span class="p">;</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">MX</span><span class="o">=*</span><span class="n">std</span><span class="o">::</span><span class="n">max_element</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">a</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">i64</span><span class="o">&gt;</span><span class="n">f</span><span class="p">(</span><span class="n">MX</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">x</span><span class="o">:</span><span class="n">a</span><span class="p">){</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">        </span><span class="n">f</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">++</span><span class="p">;</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">MX</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">        </span><span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*=</span><span class="n">i</span><span class="p">;</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">h</span><span class="o">=</span><span class="n">gcd_conv</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="w"> </span><span class="n">f</span><span class="p">);</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="w">    </span><span class="n">i64</span><span class="w"> </span><span class="n">ans</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">MX</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="w">        </span><span class="n">ans</span><span class="o">+=</span><span class="n">h</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">/</span><span class="n">i</span><span class="p">;</span>
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">ans</span><span class="o">&lt;&lt;</span><span class="sc">&#39;\n&#39;</span><span class="p">;</span>
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="p">}</span>
+</code></pre></div>
 <h4 id="_2">练习</h4>
 <p><a href="https://atcoder.jp/contests/agc038/tasks/agc038_c">C - LCMs</a></p>
 <h4 id="_3">模板仅供参考</h4>
-<pre><code class="language-cpp">const int N=1e6+1e3;
-std::vector&lt;int&gt;prime;
-std::vector&lt;bool&gt;is_prime(N+1,true);
-std::vector&lt;int&gt;mobius(N+1,1);
-
-void sieve(){
-    is_prime[0]=is_prime[1]=false;
-    for(int p=2;p&lt;=N;p++){
-        if(!is_prime[p])continue;
-        prime.push_back(p);
-        mobius[p]=-1;
-        for(int q=2*p;q&lt;=N;q+=p){
-            is_prime[q]=false;
-            if((q/p)%p==0)mobius[q]=0;
-            else mobius[q]=-mobius[q];
-        }
-    }
-}
-
-template&lt;typename T&gt;
-std::vector&lt;T&gt; fast_zeta(std::vector&lt;T&gt;F){
-    int n=F.size();
-    for(int p=2;p&lt;n;p++){
-        if(!is_prime[p])continue;
-        for(int k=(n-1)/p;k&gt;=1;k--){
-            F[k]+=F[k*p];
-        }
-    }
-    return F;
-}
-
-template&lt;typename T&gt;
-std::vector&lt;T&gt; fast_mobius(std::vector&lt;T&gt;f){
-    int n=f.size();
-    for(int p=2;p&lt;n;p++){
-        if(!is_prime[p])continue;
-        for(int k=1;k*p&lt;n;k++){
-            f[k]-=f[k*p];
-        }
-    }
-    return f;
-}
-
-template&lt;typename T&gt;
-std::vector&lt;T&gt; gcd_conv(const std::vector&lt;T&gt;&amp;f,const std::vector&lt;T&gt;&amp;g){
-    int n=std::max(f.size(),g.size());
-    auto F=fast_zeta(f);
-    auto G=fast_zeta(g);
-    std::vector&lt;T&gt;H(n);
-    for(int i=1;i&lt;n;i++)H[i]=F[i]*G[i];
-    return fast_mobius(H);
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="o">=</span><span class="mf">1e6</span><span class="o">+</span><span class="mf">1e3</span><span class="p">;</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="n">prime</span><span class="p">;</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="n">is_prime</span><span class="p">(</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="nb">true</span><span class="p">);</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="n">mobius</span><span class="p">(</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="kt">void</span><span class="w"> </span><span class="nf">sieve</span><span class="p">(){</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="n">is_prime</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="n">is_prime</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="nb">false</span><span class="p">;</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">p</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span><span class="n">p</span><span class="o">&lt;=</span><span class="n">N</span><span class="p">;</span><span class="n">p</span><span class="o">++</span><span class="p">){</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">is_prime</span><span class="p">[</span><span class="n">p</span><span class="p">])</span><span class="k">continue</span><span class="p">;</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">        </span><span class="n">prime</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">        </span><span class="n">mobius</span><span class="p">[</span><span class="n">p</span><span class="p">]</span><span class="o">=</span><span class="mi">-1</span><span class="p">;</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">q</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="n">p</span><span class="p">;</span><span class="n">q</span><span class="o">&lt;=</span><span class="n">N</span><span class="p">;</span><span class="n">q</span><span class="o">+=</span><span class="n">p</span><span class="p">){</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">            </span><span class="n">is_prime</span><span class="p">[</span><span class="n">q</span><span class="p">]</span><span class="o">=</span><span class="nb">false</span><span class="p">;</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">            </span><span class="k">if</span><span class="p">((</span><span class="n">q</span><span class="o">/</span><span class="n">p</span><span class="p">)</span><span class="o">%</span><span class="n">p</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="n">mobius</span><span class="p">[</span><span class="n">q</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">            </span><span class="k">else</span><span class="w"> </span><span class="n">mobius</span><span class="p">[</span><span class="n">q</span><span class="p">]</span><span class="o">=-</span><span class="n">mobius</span><span class="p">[</span><span class="n">q</span><span class="p">];</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="p">}</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">fast_zeta</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="n">F</span><span class="p">){</span>
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="o">=</span><span class="n">F</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">p</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span><span class="n">p</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">p</span><span class="o">++</span><span class="p">){</span>
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">is_prime</span><span class="p">[</span><span class="n">p</span><span class="p">])</span><span class="k">continue</span><span class="p">;</span>
+<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="o">=</span><span class="p">(</span><span class="n">n</span><span class="mi">-1</span><span class="p">)</span><span class="o">/</span><span class="n">p</span><span class="p">;</span><span class="n">k</span><span class="o">&gt;=</span><span class="mi">1</span><span class="p">;</span><span class="n">k</span><span class="o">--</span><span class="p">){</span>
+<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="w">            </span><span class="n">F</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">+=</span><span class="n">F</span><span class="p">[</span><span class="n">k</span><span class="o">*</span><span class="n">p</span><span class="p">];</span>
+<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">F</span><span class="p">;</span>
+<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a><span class="p">}</span>
+<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a>
+<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
+<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">fast_mobius</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="n">f</span><span class="p">){</span>
+<a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="o">=</span><span class="n">f</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+<a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">p</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span><span class="n">p</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">p</span><span class="o">++</span><span class="p">){</span>
+<a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">is_prime</span><span class="p">[</span><span class="n">p</span><span class="p">])</span><span class="k">continue</span><span class="p">;</span>
+<a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a><span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">k</span><span class="o">*</span><span class="n">p</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">k</span><span class="o">++</span><span class="p">){</span>
+<a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a><span class="w">            </span><span class="n">f</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">-=</span><span class="n">f</span><span class="p">[</span><span class="n">k</span><span class="o">*</span><span class="n">p</span><span class="p">];</span>
+<a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-3-41" name="__codelineno-3-41" href="#__codelineno-3-41"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">f</span><span class="p">;</span>
+<a id="__codelineno-3-42" name="__codelineno-3-42" href="#__codelineno-3-42"></a><span class="p">}</span>
+<a id="__codelineno-3-43" name="__codelineno-3-43" href="#__codelineno-3-43"></a>
+<a id="__codelineno-3-44" name="__codelineno-3-44" href="#__codelineno-3-44"></a><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
+<a id="__codelineno-3-45" name="__codelineno-3-45" href="#__codelineno-3-45"></a><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">gcd_conv</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span><span class="n">f</span><span class="p">,</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span><span class="n">g</span><span class="p">){</span>
+<a id="__codelineno-3-46" name="__codelineno-3-46" href="#__codelineno-3-46"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="o">=</span><span class="n">std</span><span class="o">::</span><span class="n">max</span><span class="p">(</span><span class="n">f</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span><span class="n">g</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
+<a id="__codelineno-3-47" name="__codelineno-3-47" href="#__codelineno-3-47"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">F</span><span class="o">=</span><span class="n">fast_zeta</span><span class="p">(</span><span class="n">f</span><span class="p">);</span>
+<a id="__codelineno-3-48" name="__codelineno-3-48" href="#__codelineno-3-48"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">G</span><span class="o">=</span><span class="n">fast_zeta</span><span class="p">(</span><span class="n">g</span><span class="p">);</span>
+<a id="__codelineno-3-49" name="__codelineno-3-49" href="#__codelineno-3-49"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="n">H</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+<a id="__codelineno-3-50" name="__codelineno-3-50" href="#__codelineno-3-50"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="n">H</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">F</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">G</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<a id="__codelineno-3-51" name="__codelineno-3-51" href="#__codelineno-3-51"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">fast_mobius</span><span class="p">(</span><span class="n">H</span><span class="p">);</span>
+<a id="__codelineno-3-52" name="__codelineno-3-52" href="#__codelineno-3-52"></a><span class="p">}</span>
+</code></pre></div>
 
 
 

@@ -1277,36 +1277,35 @@
 <p><span class="arithmatex"><span class="MathJax_Preview">b_{i} 是第i个位置的p_{i}有多少个，b_{i} \ge 0</span><script type="math/tex">b_{i} 是第i个位置的p_{i}有多少个，b_{i} \ge 0</script></span>  </p>
 <p><span class="arithmatex"><span class="MathJax_Preview">对于分配一个素因子 p_i^{a_i},有 \binom{N+a_i-1}{N}种可能</span><script type="math/tex">对于分配一个素因子 p_i^{a_i},有 \binom{N+a_i-1}{N}种可能</script></span></p>
 <p>由于素因子之间独立，故乘法原理即可  </p>
-<pre><code class="language-cpp">std::vector&lt;std::pair&lt;i64,i64&gt;&gt; divsor(i64 N){
-    std::vector&lt;std::pair&lt;i64,i64&gt;&gt;ans;
-    for(i64 i=2;i*i&lt;=N;i++){
-        if(N%i)continue;
-        int exp=0;
-        while(N%i==0){
-            N/=i;
-            exp++;
-        }
-        ans.emplace_back(i,exp);
-    }
-    if(N&gt;1){
-        ans.emplace_back(N,1);
-    }
-    return ans;
-}
-
-void solve()
-{
-    int N,M;
-    std::cin&gt;&gt;N&gt;&gt;M;
-    Z ans=1;
-    auto ds=divsor(M);
-    for(auto[_,x]:ds){
-        ans*=Comb.C(N+x-1,x);
-    }
-    std::cout&lt;&lt;ans&lt;&lt;'\n';
-}
-
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="n">i64</span><span class="p">,</span><span class="n">i64</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">divsor</span><span class="p">(</span><span class="n">i64</span><span class="w"> </span><span class="n">N</span><span class="p">){</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="n">i64</span><span class="p">,</span><span class="n">i64</span><span class="o">&gt;&gt;</span><span class="n">ans</span><span class="p">;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="n">i64</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span><span class="n">i</span><span class="o">*</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">N</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">N</span><span class="o">%</span><span class="n">i</span><span class="p">)</span><span class="k">continue</span><span class="p">;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">exp</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">        </span><span class="k">while</span><span class="p">(</span><span class="n">N</span><span class="o">%</span><span class="n">i</span><span class="o">==</span><span class="mi">0</span><span class="p">){</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">            </span><span class="n">N</span><span class="o">/=</span><span class="n">i</span><span class="p">;</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">            </span><span class="n">exp</span><span class="o">++</span><span class="p">;</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">        </span><span class="n">ans</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">exp</span><span class="p">);</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">N</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">){</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">        </span><span class="n">ans</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ans</span><span class="p">;</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="p">}</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="kt">void</span><span class="w"> </span><span class="n">solve</span><span class="p">()</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="p">{</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="p">,</span><span class="n">M</span><span class="p">;</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">N</span><span class="o">&gt;&gt;</span><span class="n">M</span><span class="p">;</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">    </span><span class="n">Z</span><span class="w"> </span><span class="n">ans</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">ds</span><span class="o">=</span><span class="n">divsor</span><span class="p">(</span><span class="n">M</span><span class="p">);</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="k">auto</span><span class="p">[</span><span class="n">_</span><span class="p">,</span><span class="n">x</span><span class="p">]</span><span class="o">:</span><span class="n">ds</span><span class="p">){</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">        </span><span class="n">ans</span><span class="o">*=</span><span class="n">Comb</span><span class="p">.</span><span class="n">C</span><span class="p">(</span><span class="n">N</span><span class="o">+</span><span class="n">x</span><span class="mi">-1</span><span class="p">,</span><span class="n">x</span><span class="p">);</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">ans</span><span class="o">&lt;&lt;</span><span class="sc">&#39;\n&#39;</span><span class="p">;</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="p">}</span>
+</code></pre></div>
 
 
 

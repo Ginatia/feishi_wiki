@@ -1282,24 +1282,24 @@
 <p><span class="arithmatex"><span class="MathJax_Preview">注意到,每次操作都不影响序列其他的数的相对次序</span><script type="math/tex">注意到,每次操作都不影响序列其他的数的相对次序</script></span></p>
 <p><span class="arithmatex"><span class="MathJax_Preview">所以如果找到一个LIS(最长上升子序列),则剩下的数的集合个数即为最少操作次数</span><script type="math/tex">所以如果找到一个LIS(最长上升子序列),则剩下的数的集合个数即为最少操作次数</script></span></p>
 <p><span class="arithmatex"><span class="MathJax_Preview">答案即为:N-LIS</span><script type="math/tex">答案即为:N-LIS</script></span>  </p>
-<pre><code class="language-cpp">int LIS(std::vector&lt;int&gt;&amp;a){
-  int n=(int)a.size();
-  int INF=std::numeric_limits&lt;int&gt;::max();
-  std::vector&lt;int&gt;dp(n,INF);
-  for(int i=0;i&lt;n;i++){
-    *std::lower_bound(dp.begin(),dp.end(),a[i])=a[i];
-  }
-  return std::lower_bound(dp.begin(),dp.end(),INF)-dp.begin();
-}
-void solve() {
-  int n;std::cin&gt;&gt;n;
-  std::vector&lt;int&gt;a(n);
-  for(auto&amp;x:a){
-    std::cin&gt;&gt;x;
-  }
-  std::cout&lt;&lt;n-LIS(a)&lt;&lt;'\n';
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">LIS</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span><span class="n">a</span><span class="p">){</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="o">=</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">a</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">INF</span><span class="o">=</span><span class="n">std</span><span class="o">::</span><span class="n">numeric_limits</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">max</span><span class="p">();</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="n">dp</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">INF</span><span class="p">);</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="o">*</span><span class="n">std</span><span class="o">::</span><span class="n">lower_bound</span><span class="p">(</span><span class="n">dp</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">dp</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">=</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">lower_bound</span><span class="p">(</span><span class="n">dp</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">dp</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="n">INF</span><span class="p">)</span><span class="o">-</span><span class="n">dp</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="p">}</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="kt">void</span><span class="w"> </span><span class="nf">solve</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">n</span><span class="p">;</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="n">a</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">  </span><span class="k">for</span><span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span><span class="n">x</span><span class="o">:</span><span class="n">a</span><span class="p">){</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">x</span><span class="p">;</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">n</span><span class="o">-</span><span class="n">LIS</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">&lt;&lt;</span><span class="sc">&#39;\n&#39;</span><span class="p">;</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="p">}</span>
+</code></pre></div>
 
 
 
