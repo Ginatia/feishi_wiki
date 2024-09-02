@@ -14,7 +14,7 @@ extra_javascript:
 
 extra_css:
   - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML
-
+  - css/extra.css
 
 nav:
   - 关于: index.md
@@ -51,3 +51,5 @@ nav:
     - cf/CF560.md
   - Problem:
     - problem/The_Gourmet.md
+
+dev_addr: '127.0.0.1:9090'

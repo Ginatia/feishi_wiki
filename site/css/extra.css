@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+
+/* 应用 Fira Code 字体到整个文档 */
+body {
+  font-family: 'Fira Code', monospace;
+}
+
+/* 应用 Fira Code 字体到代码块 */
+pre,
+code {
+  font-family: 'Fira Code', monospace;
+}
