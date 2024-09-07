@@ -1,7 +1,6 @@
 ---
-title: bit dp
+title: bit_dp_1
 date: 2024-04-28
-tags:
 ---
 [D - 徒競走](https://atcoder.jp/contests/abc041/tasks/abc041_d)
 
