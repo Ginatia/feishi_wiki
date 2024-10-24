@@ -30,7 +30,13 @@ nav:
   - Combinatorics:
     - Combinatorics/combination.md
   - dp:
-    - dp/bit_dp.md
+    - bit_dp:
+      - dp/bit_dp/bit_dp.md
+      - dp/bit_dp/bit_dp_1.md
+
+    # - dp/bit_dp/bit_dp.md
+    # - dp/bit_dp/bit_dp_1.md
+
     - dp/dp_on_tree.md
     - dp/dp_on_digits.md
     - dp/range_dp.md
@@ -58,5 +64,7 @@ nav:
     - cf/CF560.md
   - Problem:
     - problem/The_Gourmet.md
+  - CPP:
+    - CPP/snippet/snippet_0.md
 
 dev_addr: '127.0.0.1:9090'
