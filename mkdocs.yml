@@ -34,9 +34,6 @@ nav:
       - dp/bit_dp/bit_dp.md
       - dp/bit_dp/bit_dp_1.md
 
-    # - dp/bit_dp/bit_dp.md
-    # - dp/bit_dp/bit_dp_1.md
-
     - dp/dp_on_tree.md
     - dp/dp_on_digits.md
     - dp/range_dp.md

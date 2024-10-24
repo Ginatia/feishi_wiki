@@ -122,7 +122,7 @@ $$
 由于可能出现A_i=A_j,又因为这样的贡献为1 \\
 所以需要减去多余的贡献 \\
 这样的贡献是\binom{cnt[x]}{2}*1 \\
-贡献为\sum_{x=1}^{M}\sum_{x=1}^{dx\le M}(S[R]-S[L])*d*cnt[x]-\frac{cnt[x](cnt[x]+1)}{2} \\
+贡献为\sum_{x=1}^{M}\sum_{d=1}^{dx\le M}(S[R]-S[L])*d*cnt[x]-\frac{cnt[x](cnt[x]+1)}{2} \\
 时间复杂度为调和级数\\
 $$
 
