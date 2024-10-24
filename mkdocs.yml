@@ -26,6 +26,7 @@ nav:
   - 关于: index.md
   - Math:
     - math/GCD_Convolution.md
+    - math/sum_of_floors.md
   - Combinatorics:
     - Combinatorics/combination.md
   - dp:
