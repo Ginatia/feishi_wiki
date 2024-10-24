@@ -227,14 +227,23 @@
   
     
     
+      
+  
+  
+  
+    
+    
       <li class="md-tabs__item">
-        <a href="../../dp/bit_dp/" class="md-tabs__link">
+        <a href="../../dp/bit_dp/bit_dp/" class="md-tabs__link">
           
   
   dp
 
         </a>
       </li>
+    
+  
+
     
   
 
@@ -304,6 +313,24 @@
           
   
   Problem
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../CPP/snippet/snippet_0/" class="md-tabs__link">
+          
+  
+  CPP
 
         </a>
       </li>
@@ -611,16 +638,83 @@
   
   
   
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    bit_dp
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            bit_dp
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../../dp/bit_dp/" class="md-nav__link">
+      <a href="../../dp/bit_dp/bit_dp/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    bit dp
+    bit_dp_1
   </span>
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dp/bit_dp/bit_dp_1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    bit_dp_2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -1296,6 +1390,72 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    CPP
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            CPP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CPP/snippet/snippet_0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Snippet 0
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1480,7 +1640,7 @@ answer=\sum (S_f(R)-S_f(L-1))\times \left\lfloor \frac{N}{L} \right\rfloor \mod 
 由于可能出现A_i=A_j,又因为这样的贡献为1 \\
 所以需要减去多余的贡献 \\
 这样的贡献是\binom{cnt[x]}{2}*1 \\
-贡献为\sum_{x=1}^{M}\sum_{x=1}^{dx\le M}(S[R]-S[L])*d*cnt[x]-\frac{cnt[x](cnt[x]+1)}{2} \\
+贡献为\sum_{x=1}^{M}\sum_{d=1}^{dx\le M}(S[R]-S[L])*d*cnt[x]-\frac{cnt[x](cnt[x]+1)}{2} \\
 时间复杂度为调和级数\\
 </div>
 <script type="math/tex; mode=display">
@@ -1504,7 +1664,7 @@ answer=\sum (S_f(R)-S_f(L-1))\times \left\lfloor \frac{N}{L} \right\rfloor \mod 
 由于可能出现A_i=A_j,又因为这样的贡献为1 \\
 所以需要减去多余的贡献 \\
 这样的贡献是\binom{cnt[x]}{2}*1 \\
-贡献为\sum_{x=1}^{M}\sum_{x=1}^{dx\le M}(S[R]-S[L])*d*cnt[x]-\frac{cnt[x](cnt[x]+1)}{2} \\
+贡献为\sum_{x=1}^{M}\sum_{d=1}^{dx\le M}(S[R]-S[L])*d*cnt[x]-\frac{cnt[x](cnt[x]+1)}{2} \\
 时间复杂度为调和级数\\
 </script>
 </div>
