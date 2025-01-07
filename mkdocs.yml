@@ -58,6 +58,8 @@ nav:
     - atc/ABC325.md
     - atc/ABC343.md
     - atc/ABC349.md
+  - LeetCode:
+    - LeetCode/WC357.md
   - Codeforces:
     - cf/CF560.md
   - Problem:
