@@ -33,9 +33,6 @@ nav:
       - dp/bit_dp/bit_dp.md
       - dp/bit_dp/bit_dp_1.md
 
-    # - dp/bit_dp/bit_dp.md
-    # - dp/bit_dp/bit_dp_1.md
-
     - dp/dp_on_tree.md
     - dp/dp_on_digits.md
     - dp/range_dp.md
@@ -44,6 +41,7 @@ nav:
     - miscellaneous/two_pointer.md
   - Atcoder:
     - atc/ABC006.md
+    - atc/ABC012.md
     - atc/ABC015.md
     - atc/ABC016.md
     - atc/ABC036.md
