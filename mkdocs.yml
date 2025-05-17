@@ -68,5 +68,7 @@ nav:
     - CPP/snippet/snippet_0.md
   - SDL:
     - SDL/SDL_0.md
+  - Dev:
+    - dev/vcpkg.md
 
 dev_addr: '127.0.0.1:9090'
