@@ -369,6 +369,24 @@
   
 
       
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../dev/vcpkg/" class="md-tabs__link">
+          
+  
+  Dev
+
+        </a>
+      </li>
+    
+  
+
+      
     </ul>
   </div>
 </nav>
@@ -1013,6 +1031,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../ABC040/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ABC040
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../ABC110/" class="md-nav__link">
         
   
@@ -1603,6 +1642,93 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Dev
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            Dev
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev/vcpkg/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vcpkg
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev/boost_json/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Boost json
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1764,11 +1890,11 @@ T 由 S 操作得来  </p>
 </code></pre></div>
 <p>再根据 <span class="arithmatex"><span class="MathJax_Preview">2^{i}j,2^{i}(j+1)</span><script type="math/tex">2^{i}j,2^{i}(j+1)</script></span>  </p>
 <p>发现一次的增量为  <span class="arithmatex"><span class="MathJax_Preview">2^{i}</span><script type="math/tex">2^{i}</script></span></p>
-<p>同时  $i\ge 1 时，有: $</p>
+<p>同时  <span class="arithmatex"><span class="MathJax_Preview">i \ge 1</span><script type="math/tex">i \ge 1</script></span> 时，有: </p>
 <p><span class="arithmatex"><span class="MathJax_Preview">2^{i}=2*2^{i-1}</span><script type="math/tex">2^{i}=2*2^{i-1}</script></span> </p>
 <p><span class="arithmatex"><span class="MathJax_Preview">2^{i}*j=2^{i-1}(2j) \rightarrow 2^{i-1}(2j+1)</span><script type="math/tex">2^{i}*j=2^{i-1}(2j) \rightarrow 2^{i-1}(2j+1)</script></span></p>
 <p>也即增量为 <span class="arithmatex"><span class="MathJax_Preview">2^{i-1}</span><script type="math/tex">2^{i-1}</script></span>  </p>
-<p>也就是说每次我们找到这个数字的二进制最右边的1，贪心地去添加增量，保证 <span class="arithmatex"><span class="MathJax_Preview">x+2^{i}\le R</span><script type="math/tex">x+2^{i}\le R</script></span></p>
+<p>也就是说每次我们找到这个数字的二进制最右边的1，贪心地去添加增量，保证 <span class="arithmatex"><span class="MathJax_Preview">x+2^{i} \le R</span><script type="math/tex">x+2^{i} \le R</script></span></p>
 <p>对于0来说，直接添加R的最左边的1即可转为一般情况  </p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;bits/stdc++.h&gt;</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">using</span><span class="w"> </span><span class="n">i64</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="p">;</span>
