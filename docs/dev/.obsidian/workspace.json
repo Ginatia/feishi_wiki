@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "SQLite.md",
+                "file": "pyside_0.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "SQLite"
+              "title": "pyside_0"
             }
           }
         ]
@@ -170,7 +170,8 @@
   },
   "active": "5368d0519ff112fe",
   "lastOpenFiles": [
-    "pyside_0.md",
-    "SQLite.md"
+    "Dev_0.md",
+    "SQLite.md",
+    "pyside_0.md"
   ]
 }

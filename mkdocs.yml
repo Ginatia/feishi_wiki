@@ -72,11 +72,12 @@ nav:
   - SDL:
     - SDL/SDL_0.md
   - Dev:
-    - dev/vcpkg.md
-    - dev/boost_json.md
     - dev/Dev_0.md
+    - dev/vcpkg.md
+    - dev/CMake_0.md
+    - dev/boost_json.md
     - dev/pyside_0.md
     - dev/SQLite.md
-    - dev/CMake_0.md
+    
 
 dev_addr: '127.0.0.1:9090'
