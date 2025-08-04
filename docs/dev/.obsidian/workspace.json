@@ -13,15 +13,72 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "pyside_0.md",
+                "file": "Dev_0.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "pyside_0"
+              "title": "Dev_0"
+            }
+          },
+          {
+            "id": "8bde83ce0d7f2369",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Dev_1.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Dev_1"
+            }
+          },
+          {
+            "id": "0c83769b3c463a59",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Scrapy_0.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Scrapy_0"
+            }
+          },
+          {
+            "id": "53f1e7a46529bd9f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "FastAPI_0.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "FastAPI_0"
+            }
+          },
+          {
+            "id": "c5357fa5002e26c5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PostgreSQL_0.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "PostgreSQL_0"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -168,10 +225,15 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "5368d0519ff112fe",
+  "active": "0c83769b3c463a59",
   "lastOpenFiles": [
+    "Dev_1.md",
+    "Scrapy_0.md",
+    "PostgreSQL_0.md",
+    "FastAPI_0.md",
+    "conanfile.txt",
     "Dev_0.md",
-    "SQLite.md",
-    "pyside_0.md"
+    "pyside_0.md",
+    "SQLite.md"
   ]
 }
