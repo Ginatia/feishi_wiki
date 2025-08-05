@@ -2027,15 +2027,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      创建启动文件
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#spider" class="md-nav__link">
     <span class="md-ellipsis">
       创建Spider类
@@ -2054,7 +2045,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       存储抓取的数据
     </span>
@@ -2063,7 +2054,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       跟踪链接
     </span>
@@ -2130,15 +2121,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      创建启动文件
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#spider" class="md-nav__link">
     <span class="md-ellipsis">
       创建Spider类
@@ -2157,7 +2139,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       存储抓取的数据
     </span>
@@ -2166,7 +2148,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       跟踪链接
     </span>
@@ -2204,7 +2186,6 @@
 <h2 id="_1">创建目录</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">scrapy</span> <span class="n">startproject</span> <span class="n">project_name</span>
 </code></pre></div>
-<h2 id="_2">创建启动文件</h2>
 <h2 id="spider">创建Spider类</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
@@ -2235,7 +2216,7 @@
 <p>进入项目顶层</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">scrapy</span> <span class="n">crawl</span> <span class="n">s0</span>
 </code></pre></div>
-<h2 id="_3">存储抓取的数据</h2>
+<h2 id="_2">存储抓取的数据</h2>
 <p>-O 选项覆盖文件</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">scrapy</span> <span class="n">crawl</span> <span class="n">s1</span> <span class="n">-O</span> <span class="n">s1</span><span class="p">.</span><span class="n">json</span>
 </code></pre></div>
@@ -2245,7 +2226,7 @@ Json Line 格式每一行都是单独的 Json对象。
 最终可以使用 JQ 工具进行转换。</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">scrapy</span> <span class="n">crawl</span> <span class="n">s2</span> <span class="n">-o</span> <span class="n">s2</span><span class="p">.</span><span class="n">jsonl</span>
 </code></pre></div>
-<h2 id="_4">跟踪链接</h2>
+<h2 id="_3">跟踪链接</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">&lt;</span><span class="nt">ul</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;pager&quot;</span><span class="p">&gt;</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;next&quot;</span><span class="p">&gt;</span>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/page/2/&quot;</span><span class="p">&gt;</span>Next <span class="p">&lt;</span><span class="nt">span</span> <span class="na">aria-hidden</span><span class="o">=</span><span class="s">&quot;true&quot;</span><span class="p">&gt;</span><span class="ni">&amp;rarr;</span><span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>

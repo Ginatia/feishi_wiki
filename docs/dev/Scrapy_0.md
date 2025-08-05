@@ -6,11 +6,6 @@
 ```powershell
 scrapy startproject project_name
 ```
-
-## 创建启动文件
-
-
-
 ## 创建Spider类
 
 ```python
