@@ -24,52 +24,14 @@ extra_css:
 
 nav:
   - 关于: index.md
-  - Math:
-    - math/GCD_Convolution.md
-    - math/sum_of_floors.md
-  - Combinatorics:
-    - Combinatorics/combination.md
-  - dp:
-    - bit_dp:
-      - dp/bit_dp/bit_dp.md
-      - dp/bit_dp/bit_dp_1.md
 
-    - dp/dp_on_tree.md
-    - dp/dp_on_digits.md
-    - dp/range_dp.md
-    - dp/dp_probability.md
-  - miscellaneous:
-    - miscellaneous/two_pointer.md
-  - Atcoder:
-    - atc/ABC006.md
-    - atc/ABC012.md
-    - atc/ABC015.md
-    - atc/ABC016.md
-    - atc/ABC036.md
-    - atc/ABC040.md
-    - atc/ABC110.md
-    - atc/ABC127.md
-    - atc/ABC128.md
-    - atc/ABC133.md
-    - atc/ABC152.md
-    - atc/ABC160.md
-    - atc/ABC170.md
-    - atc/ABC208.md
-    - atc/ABC284.md
-    - atc/ABC325.md
-    - atc/ABC343.md
-    - atc/ABC349.md
-  - LeetCode:
-    - LeetCode/WC357.md
-  - Codeforces:
-    - cf/CF560.md
-  - Problem:
-    - problem/The_Gourmet.md
   - CPP:
     - CPP/snippet/snippet_0.md
   - CSharp:
     - csharp/csharp_0.md
     - csharp/csharp_1.md
+  - SQL:
+    - SQL/sql_0.md
   - SDL:
     - SDL/SDL_0.md
   - Dev:
@@ -82,6 +44,54 @@ nav:
     - dev/FastAPI_0.md
     - dev/PostgreSQL_0.md
     - dev/SQLite.md
+
+    - dev/Pybind11_0.md
+    
     - dev/Scrapy_0.md
+    - dev/Scrapy_1.md
+  
+  - CP:
+    - Math:
+      - math/GCD_Convolution.md
+      - math/sum_of_floors.md
+    - Combinatorics:
+      - Combinatorics/combination.md
+    - dp:
+      - bit_dp:
+        - dp/bit_dp/bit_dp.md
+        - dp/bit_dp/bit_dp_1.md
+
+      - dp/dp_on_tree.md
+      - dp/dp_on_digits.md
+      - dp/range_dp.md
+      - dp/dp_probability.md
+    - miscellaneous:
+      - miscellaneous/two_pointer.md
+    - Atcoder:
+      - atc/ABC006.md
+      - atc/ABC012.md
+      - atc/ABC015.md
+      - atc/ABC016.md
+      - atc/ABC036.md
+      - atc/ABC040.md
+      - atc/ABC110.md
+      - atc/ABC127.md
+      - atc/ABC128.md
+      - atc/ABC133.md
+      - atc/ABC152.md
+      - atc/ABC160.md
+      - atc/ABC170.md
+      - atc/ABC208.md
+      - atc/ABC284.md
+      - atc/ABC325.md
+      - atc/ABC343.md
+      - atc/ABC349.md
+    - LeetCode:
+      - LeetCode/WC357.md
+    - Codeforces:
+      - cf/CF560.md
+    - Problem:
+      - problem/The_Gourmet.md
+  
 
 dev_addr: '127.0.0.1:9090'
