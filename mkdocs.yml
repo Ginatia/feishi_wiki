@@ -30,6 +30,8 @@ nav:
   - CSharp:
     - csharp/csharp_0.md
     - csharp/csharp_1.md
+  - Lua:
+    - Lua/Lua_0.md
   - SQL:
     - SQL/sql_0.md
   - SDL:
@@ -39,13 +41,18 @@ nav:
     - dev/Dev_1.md
     - dev/vcpkg.md
     - dev/CMake_0.md
+    
+    - dev/Boost_0.md
     - dev/boost_json.md
+
     - dev/pyside_0.md
     - dev/FastAPI_0.md
     - dev/PostgreSQL_0.md
     - dev/SQLite.md
 
+    - dev/SWIG_0.md
     - dev/Pybind11_0.md
+    - dev/Cython_0.md
     
     - dev/Scrapy_0.md
     - dev/Scrapy_1.md
