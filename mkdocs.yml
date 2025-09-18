@@ -27,9 +27,15 @@ nav:
 
   - CPP:
     - CPP/snippet/snippet_0.md
+  - Qml:
+    - Qml/Qml_0.md
+  - JS:
+    - JS/JS_0.md
   - CSharp:
     - csharp/csharp_0.md
     - csharp/csharp_1.md
+  - Kotlin:
+    - Kotlin/KT_0.md
   - Lua:
     - Lua/Lua_0.md
   - SQL:
@@ -42,20 +48,24 @@ nav:
     - dev/vcpkg.md
     - dev/CMake_0.md
     
-    - dev/Boost_0.md
-    - dev/boost_json.md
+    - Boost:
+      - dev/Boost_0.md
+      - dev/boost_json.md
 
-    - dev/pyside_0.md
-    - dev/FastAPI_0.md
-    - dev/PostgreSQL_0.md
-    - dev/SQLite.md
+    - SQL:
+      - dev/PostgreSQL_0.md
+      - dev/SQLite.md
 
-    - dev/SWIG_0.md
-    - dev/Pybind11_0.md
-    - dev/Cython_0.md
+    - Python:
+      - dev/SWIG_0.md
+      - dev/Pybind11_0.md
+      - dev/Cython_0.md
     
-    - dev/Scrapy_0.md
-    - dev/Scrapy_1.md
+      - dev/pyside_0.md
+      - dev/FastAPI_0.md
+
+      - dev/Scrapy_0.md
+      - dev/Scrapy_1.md
   
   - CP:
     - Math:

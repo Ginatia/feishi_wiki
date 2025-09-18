@@ -57,9 +57,6 @@ days = {"Sunday", "Monday", "Tuesday", "Wednesday",
 print(days[1])
 ```
 
-## 
-
-
 ## Relational Operators
 
 ```lua
