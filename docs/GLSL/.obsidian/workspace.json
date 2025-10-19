@@ -1,37 +1,56 @@
 {
   "main": {
-    "id": "9a42b98ea8a373ca",
+    "id": "f1b8d6542220c879",
     "type": "split",
     "children": [
       {
-        "id": "1b2c735b5d08e40a",
+        "id": "be410774d70fecf5",
         "type": "tabs",
         "children": [
           {
-            "id": "a293a751c9421fdc",
+            "id": "4c66f09f1ca734cd",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "GLSL_0.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "新标签页"
+              "title": "GLSL_0"
+            }
+          },
+          {
+            "id": "6255bf89750043b0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "GLSL_1.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "GLSL_1"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
   },
   "left": {
-    "id": "db6abd1ab7a054a0",
+    "id": "f5fbedb803abce2a",
     "type": "split",
     "children": [
       {
-        "id": "9bb0411d920ac5d0",
+        "id": "eb6f775693798fe1",
         "type": "tabs",
         "children": [
           {
-            "id": "be086af85485fb9f",
+            "id": "cbc4b8bfcf47c0cd",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -44,7 +63,7 @@
             }
           },
           {
-            "id": "20ca6b5559a0eb1c",
+            "id": "f32329c19de2de7e",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -61,7 +80,7 @@
             }
           },
           {
-            "id": "5475f1eb301668ed",
+            "id": "4ff284591d392fa5",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -77,20 +96,20 @@
     "width": 300
   },
   "right": {
-    "id": "c031b5eea9a2c7ca",
+    "id": "29abcaebd88c4be7",
     "type": "split",
     "children": [
       {
-        "id": "aae848dcd9ef1487",
+        "id": "895ce93cba9c3192",
         "type": "tabs",
         "children": [
           {
-            "id": "9db982efaae69077",
+            "id": "58d987bc8e72720b",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "csharp_1.md",
+                "file": "GLSL_1.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,25 +119,25 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "csharp_1 的反向链接列表"
+              "title": "GLSL_1 的反向链接列表"
             }
           },
           {
-            "id": "3b95964305b260cb",
+            "id": "181b005ec1a63045",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "csharp_1.md",
+                "file": "GLSL_1.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "csharp_1 的出链列表"
+              "title": "GLSL_1 的出链列表"
             }
           },
           {
-            "id": "3552344e46975a74",
+            "id": "31e3218d9c3ff3b2",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -133,18 +152,18 @@
             }
           },
           {
-            "id": "fea34f08aa7b467b",
+            "id": "4d694dd092382786",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "csharp_1.md",
+                "file": "GLSL_1.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "csharp_1 的大纲"
+              "title": "GLSL_1 的大纲"
             }
           }
         ]
@@ -156,20 +175,18 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "bases:创建新数据库": false,
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
       "canvas:新建白板": false,
       "daily-notes:打开/创建今天的日记": false,
       "templates:插入模板": false,
-      "command-palette:打开命令面板": false
+      "command-palette:打开命令面板": false,
+      "bases:创建新数据库": false
     }
   },
-  "active": "a293a751c9421fdc",
+  "active": "6255bf89750043b0",
   "lastOpenFiles": [
-    "csharp_1.md",
-    "WPF_0.md",
-    "csharp_0.md",
-    "Pasted image 20250813105326.png"
+    "GLSL_0.md",
+    "GLSL_1.md"
   ]
 }
