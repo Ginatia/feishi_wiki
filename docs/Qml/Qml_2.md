@@ -270,3 +270,47 @@ Window{
 }
 ```
 
+## 使用 required 修饰属性
+
+在这个例子中，Label 代理在中继器中声明三个必需属性： 名称 、 价格和颜色 。
+
+每当创建代理实例时，这些属性必须显式设置。
+
+如果缺少或错误分配了这些属性，QML 引擎会在运行时触发错误，确保代理的期望得到满足。
+
+
+```qml
+import QtQuick
+import QtQuick.Layouts
+import QtQuick.Controls
+
+Window{
+    id: root
+    visible: true
+    property size size: ({width:400,height:200})
+
+    property int rootValue: 0
+
+    width: size.width
+    height: size.height
+
+    ColumnLayout{
+        anchors.fill: parent
+
+        Repeater{
+            model: [
+                {"name":"N1","price":10,"color":"darkslategray"},
+                {"name":"N2","price":20,"color":"darkcyan"},
+                {"name":"N3","price":30,"color":"darkseagreen"}
+            ]
+
+            delegate: Label{
+                required property string name
+                required property real price
+                required color
+                text: `${name} - ${price} CNY`
+            }
+        }
+    }
+}
+```

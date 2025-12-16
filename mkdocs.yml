@@ -31,6 +31,7 @@ nav:
     - Qml/Qml_0.md
     - Qml/Qml_1.md
     - Qml/Qml_2.md
+    - Qml/Qml_3.md
   - JS:
     - JS/JS_0.md
   - CSharp:
@@ -49,7 +50,9 @@ nav:
     - dev/Dev_1.md
     - dev/vcpkg.md
     - dev/CMake_0.md
-    
+    - AFSIM/Learn_0.md
+    - AFSIM/Sensor_0.md
+
     - Boost:
       - dev/Boost_0.md
       - dev/boost_json.md
