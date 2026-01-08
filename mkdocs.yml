@@ -52,6 +52,7 @@ nav:
     - dev/CMake_0.md
     - AFSIM/Learn_0.md
     - AFSIM/Sensor_0.md
+    - AFSIM/BehaviorTree_0.md
 
     - Boost:
       - dev/Boost_0.md
