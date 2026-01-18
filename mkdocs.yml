@@ -27,6 +27,11 @@ nav:
 
   - CPP:
     - CPP/snippet/snippet_0.md
+  - GLSL:
+    - GLSL/GLSL_0.md
+    - GLSL/GLSL_1.md
+  - Rust:
+    - Rust/Rust_0.md
   - Qml:
     - Qml/Qml_0.md
     - Qml/Qml_1.md
@@ -37,6 +42,7 @@ nav:
   - CSharp:
     - csharp/csharp_0.md
     - csharp/csharp_1.md
+    - csharp/WPF_0.md
   - Kotlin:
     - Kotlin/KT_0.md
   - Lua:
