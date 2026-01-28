@@ -25,6 +25,9 @@ extra_css:
 nav:
   - 关于: index.md
 
+  - Word:
+    - Word/Word_0.md
+
   - CPP:
     - CPP/snippet/snippet_0.md
   - GLSL:
@@ -43,6 +46,7 @@ nav:
     - csharp/csharp_0.md
     - csharp/csharp_1.md
     - csharp/WPF_0.md
+    - csharp/WPF_1.md
   - Kotlin:
     - Kotlin/KT_0.md
   - Lua:
