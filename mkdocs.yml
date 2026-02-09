@@ -24,10 +24,13 @@ extra_css:
 
 nav:
   - 关于: index.md
-
   - Word:
     - Word/Word_0.md
-
+  - AFSIM:
+    - AFSIM/Learn_0.md
+    - AFSIM/BehaviorTree_0.md
+    - AFSIM/Sensor_0.md
+    - AFSIM/Function_0.md
   - CPP:
     - CPP/snippet/snippet_0.md
   - GLSL:
@@ -60,9 +63,6 @@ nav:
     - dev/Dev_1.md
     - dev/vcpkg.md
     - dev/CMake_0.md
-    - AFSIM/Learn_0.md
-    - AFSIM/Sensor_0.md
-    - AFSIM/BehaviorTree_0.md
 
     - Boost:
       - dev/Boost_0.md
