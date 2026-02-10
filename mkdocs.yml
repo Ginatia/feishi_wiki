@@ -31,6 +31,7 @@ nav:
     - AFSIM/BehaviorTree_0.md
     - AFSIM/Sensor_0.md
     - AFSIM/Function_0.md
+    - AFSIM/Script_0.md
   - CPP:
     - CPP/snippet/snippet_0.md
   - GLSL:
