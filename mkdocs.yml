@@ -37,6 +37,8 @@ nav:
   - GLSL:
     - GLSL/GLSL_0.md
     - GLSL/GLSL_1.md
+  - Go:
+    - Go/Go_0.md
   - Rust:
     - Rust/Rust_0.md
   - Qml:
